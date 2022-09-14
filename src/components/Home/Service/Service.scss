@@ -1,0 +1,65 @@
+@import '../../../assets/variables/colors';
+
+.service {
+  width: 100%;
+  min-width: 375px;
+  padding: 30px 10px;
+  margin-bottom: 60px;
+  background-color: $light;
+
+  .wrapper {
+    width: 100%;
+
+    .services {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px 20px;
+      flex-wrap: wrap;
+      @media (max-width: 900px) {
+        justify-content: center;
+      }
+
+      .item {
+        width: 342px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        row-gap: 25px;
+
+        img {
+          max-width: 80px;
+          max-height: 70px;
+        }
+
+        .title {
+          font-size: 26px;
+          color: $dark;
+          font-weight: 500;
+        }
+
+        .descr {
+          font-size: 16px;
+          color: $black;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+        }
+
+        .link {
+          font-size: 20px;
+          font-weight: 500;
+          color: $darkblue;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          column-gap: 10px;
+        }
+      }
+    }
+  }
+}

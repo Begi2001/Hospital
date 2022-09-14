@@ -1,0 +1,119 @@
+.MainMedDiv {
+  max-width: 1570px;
+  margin: 0 auto;
+  padding: 0 10px;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .bigBox {
+    column-gap: 1rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    .Box1 {
+      margin-bottom: 3rem;
+
+      .logoMedArt {
+        width: 170px;
+        height: 50px;
+      }
+      .titleMedArt {
+        width: 240px;
+        height: 50px;
+        font-size: 18px;
+        line-height: 25px;
+        color: rgba(31, 43, 108, 1);
+      }
+    }
+    .Box2 {
+      margin-bottom: 3rem;
+
+      width: 147px;
+      height: 165px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .importantTitle {
+        font-size: 18px;
+        color: rgba(31, 43, 108, 1);
+        line-height: 21px;
+        font-weight: 600;
+      }
+
+      .titleUl {
+        list-style: none;
+        width: 102px;
+        height: 109px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .selectMed {
+          cursor: pointer;
+          font-size: 16px;
+          color: rgba(31, 43, 108, 1);
+          &:hover {
+            opacity: 0.75;
+          }
+        }
+      }
+    }
+    .Box3 {
+      width: 252px !important;
+      height: 109px !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between !important;
+      //   margin-top: 3.4rem;
+      margin-bottom: 3rem;
+      .infoMed {
+        color: rgba(31, 43, 108, 1);
+        font-size: 16px;
+        line-height: 22px;
+        .typeUrl {
+          line-height: 22px;
+          text-decoration: none;
+          color: rgba(31, 43, 108, 1);
+          font-size: 16px;
+       
+        }
+      }
+    }
+    .topFooter {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid rgba(21, 158, 236, 1);
+      column-gap: 2rem;
+      @media screen and (max-width: "436px") {
+        flex-direction: column;
+      }
+      .titleBy {
+        margin-top: 3rem;
+        font-size: 16px;
+        color: rgba(31, 43, 108, 1);
+      }
+      .linksMed {
+        margin-top: 3rem;
+        width: 125px;
+        display: flex;
+        justify-content: space-between;
+        column-gap: 1rem;
+        .linkedIn {
+          cursor: pointer;
+        }
+        .facebook {
+          cursor: pointer;
+        }
+        .insta {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

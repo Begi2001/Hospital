@@ -25,11 +25,11 @@ function App() {
                   <Route path='/about' element={<About/>}/>
                   <Route path='/aboutdoctor' element={<AboutDoctor/>}/>
                   <Route path='/operation' element={<Operation/>}/>
-                  <Route path='/news' element={<News/>}/>
+                  <Route path='/news/:id' element={<News/>}/>
                   <Route path='/blog' element={<Blog/>}/>
                   <Route path='/contact' element={<Contact/>}/>
-                  <Route path='/doctors' element={<Doctors/>}/>
-                  <Route path='/service' element={<Service/>}/>
+                  <Route path='/doctors/:id' element={<Doctors/>}/>
+                  <Route path='/service/:id' element={<Service/>}/>
                   <Route path='/services' element={<Services/>}/>
               </Routes>
               <Footer/>
