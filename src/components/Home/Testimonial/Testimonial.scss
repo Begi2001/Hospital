@@ -1,6 +1,6 @@
 .testimonial {
   width: 100%;
-  background: #E3EAEF;
+  background: #e3eaef;
   background: #fff;
   margin-bottom: 100px;
 
@@ -9,10 +9,26 @@
     text-align: center;
     max-width: 1000px;
     slider__wrapper {
-      .title{
+      .title {
         width: 600px;
         margin-bottom: 30px;
       }
     }
+  }
+  .slider__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+    padding: 20px 120px;
+    .hrSlider {
+      width: 50%;
+      border: 1px solid black;
+      border-radius: 2px;
+    }
+  }
+  .swiper-pagination-bullet-active {
+    margin-top: 20px !important;
   }
 }
