@@ -46,7 +46,11 @@ function Testimonial() {
   return (
     <section className="testimonial">
       <Container>
-        <Title children={"Testimonial"} url={null} />
+        <Title
+          className="testimonialTitle"
+          children={"Testimonial"}
+          url={null}
+        />
         <div className="slider">
           <Swiper
             spaceBetween={30}
@@ -69,7 +73,7 @@ function Testimonial() {
             {data.map((item) => (
               <SwiperSlide key={item.id}>
                 <div className="slider__wrapper">
-                  <Tilda />
+                  <Tilda className="tilda" />
                   <p className="title">{item.title}</p>
                   <hr className="hrSlider" />
                   <p className="author">{item.author}</p>

@@ -3,7 +3,6 @@
   background: #e3eaef;
   background: #fff;
   margin-bottom: 100px;
-
   .slider {
     margin: 0 auto;
     text-align: center;
@@ -20,15 +19,50 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 200px;
-    padding: 20px 120px;
+    height: 250px;
+    padding: 20px 45px;
+    @media (max-width: 480px) {
+      padding: 10px 35px;
+    }
+    .title {
+      @media (max-width: 480px) {
+        font-size: 13px;
+        line-height: 15px;
+      }
+    }
+    .tilda {
+      @media (max-width: 480px) {
+        width: 40px;
+      }
+    }
     .hrSlider {
       width: 50%;
       border: 1px solid black;
       border-radius: 2px;
     }
   }
-  .swiper-pagination-bullet-active {
-    margin-top: 20px !important;
+  .author {
+    @media (max-width: 480px) {
+      font-size: 15px;
+    }
+  }
+  .swiper-pagination {
+    margin-top: 0.1rem !important;
+    position: relative;
+  }
+  .swiper-button-next:after {
+    @media (max-width: 480px) {
+      // width: 10px;
+      font-size: 25px;
+    }
+  }
+  .swiper-button-prev:after {
+    @media (max-width: 480px) {
+      // width: 10px;
+      font-size: 25px;
+    }
+  }
+  .title__first {
+    padding-left: 5px;
   }
 }
