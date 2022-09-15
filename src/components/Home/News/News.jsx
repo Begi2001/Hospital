@@ -98,7 +98,7 @@ function News() {
                       <TopNewsCard data={top}/>
                       <div className='morenews'>
                           {news.map(single => (
-                                <NewsCard data={single}/>
+                                <NewsCard key={single.id} data={single}/>
                           ))}
                       </div>
                   </div>

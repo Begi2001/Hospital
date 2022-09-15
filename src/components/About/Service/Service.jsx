@@ -3,7 +3,7 @@ import React from 'react'
 import Photo from '../../../assets/images/aboutService.png'
 import {ReactComponent as Dot} from "../../../assets/icons/Dot.svg";
 import Container from "../../UsableComponents/Container/Container";
-import {dividerClasses} from "@mui/material";
+import './Service.scss'
 
 const data = [{
     id: 1,
@@ -22,19 +22,19 @@ const data = [{
 
 function Service() {
     return (<section className='about__service'>
-              <Container>
-                  {data.map(service => (<div key={service.id} className='about__service-wrapper'>
-                            <img src={service.image} alt="" className='about__service-wrapper-Image'/>
-                            <div className='about__Info-'>
-                                <p className='about__Info-title'>{service.title}</p>
-                                <p className='about__Info-type'>{service.type}</p>
-                                <p className='about__Info-descr'>{service.descr}</p>
-                                {service.services.map(serv => (
-                                      <p key={serv.id} className='about__Info-service'><Dot/>{serv.title}</p>))}
-                            </div>
-                        </div>))}
-              </Container>
-          </section>)
+        <Container>
+            {data.map(service => (<div key={service.id} className='about__service-wrapper'>
+                <img src={service.image} alt="" className='about__service-wrapper-Image'/>
+                <div className='about__Info'>
+                    <p className='about__Info-title'>{service.title}</p>
+                    <p className='about__Info-type'>{service.type}</p>
+                    <p className='about__Info-descr'>{service.descr}</p>
+                    {service.services.map(serv => (
+                          <p key={serv.id} className='about__Info-service'><Dot/>{serv.title}</p>))}
+                </div>
+            </div>))}
+        </Container>
+    </section>)
 }
 
 export default Service

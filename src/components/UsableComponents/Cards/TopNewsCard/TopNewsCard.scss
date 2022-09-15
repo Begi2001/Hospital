@@ -3,18 +3,18 @@
 
 .top__news {
   max-width: 660px;
-  min-width: 375px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  gap: 15px 0;
+  row-gap: 15px;
   margin-bottom: 30px;
 
   .image {
     max-width: 660px;
     max-height: 355px;
     width: 100%;
+    border-radius: 15px 15px 0 0;
   }
 
   .infos {

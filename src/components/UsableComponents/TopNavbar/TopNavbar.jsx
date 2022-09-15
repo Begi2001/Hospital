@@ -30,14 +30,14 @@ function TopNavbar() {
                       <div className='links'>
                           {links.map(links => (<div key={links.id} className='link'>
                               {links.icon}
-                              <a href={`${links.url}`} className='wrapper'>
+                              <a key={links.id} href={`${links.url}`} className='wrapper'>
                                   <p className='title'>{links.title}</p>
                                   <p className='info'>{links.text}</p>
                               </a>
                           </div>))}
                       </div>
                       <div className='socials'>
-                          {social.map(soc => (<a href={soc.url} className='social'>
+                          {social.map(soc => (<a href={soc.url} key={soc.id} className='social'>
                               {soc.icon}
                           </a>))}
                       </div>

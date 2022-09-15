@@ -9,7 +9,7 @@ function About() {
   return (
     <section className='about'>
         <Container>
-            <Title children={'About Us'} color={'rgba(255, 255, 255, 0.1)'} url={null} />
+            <Title children={'About Us'} txt={'white'} color={'rgba(255, 255, 255, 0.1)'} url={null} />
             <div className='info'>
                 <p className='info__title'>Historically, drugs were discovered through identifying the active ingredient from traditional remedies or by serendipitous discovery. Later chemical libraries of synthetic small molecules.</p>
                 <p className='info__descr'>Modern drug discovery involves the identification of screening hits, medicinal chemistry and optimization of those hits to increase the affinity, selectivity (to reduce the potential of side effects), efficacy/potency, metabolic stability (to increase the half-life), and oral bioavailability. Once a compound that fulfills all of these requirements</p>

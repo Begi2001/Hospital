@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import {Accordion, AccordionDetails, AccordionSummary, Typography} from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-
 import "./faq.scss"
 
 const faq = [
@@ -79,6 +78,7 @@ const Faq = () => {
     const handleChange2 = (panel) => (event, isExpanded) => {
         setExpanded2(isExpanded ? panel : 'panel11');
     };
+
     return (
           <div className='faq'>
               <h1 className='title'>FAQs</h1>

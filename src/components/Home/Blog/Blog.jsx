@@ -21,7 +21,7 @@ function Blog() {
                   <Title url={'./blog'} children={'Blog'}/>
                   <div className='posts'>
                       {data.map(post => (
-                            <BlogCard data={post}/>
+                            <BlogCard key={post.id} data={post}/>
                       ))}
                   </div>
               </Container>

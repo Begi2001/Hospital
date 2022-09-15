@@ -28,11 +28,11 @@ function App() {
                   <Route path='/news/:id' element={<News/>}/>
                   <Route path='/blog' element={<Blog/>}/>
                   <Route path='/contact' element={<Contact/>}/>
-                  <Route path='/doctors/:id' element={<Doctors/>}/>
+                  <Route path='/doctors' element={<Doctors/>}/>
                   <Route path='/service/:id' element={<Service/>}/>
                   <Route path='/services' element={<Services/>}/>
               </Routes>
-              <Footer/>
+              {/*<Footer/>*/}
           </>
     );
 }

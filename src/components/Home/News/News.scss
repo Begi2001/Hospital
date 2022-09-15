@@ -8,10 +8,9 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    @media (max-width: 900px) {
+    column-gap: 10px;
+    @media (max-width: 1200px) {
       justify-content: center;
-      gap: 40px 20px;
-      padding: 0 20px;
     }
 
     .morenews {
@@ -19,7 +18,7 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      gap: 10px 20px;
+      row-gap: 10px;
     }
   }
 }

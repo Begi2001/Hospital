@@ -2,7 +2,6 @@
 
 .newswrapper {
   max-width: 500px;
-  min-width: 365px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -40,18 +39,11 @@
       }
     }
 
-    .schedule {
+    .views {
       display: flex;
       justify-content: flex-start;
       align-items: flex-start;
       gap: 5px;
-
-      .views, .likes {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-      }
     }
   }
 }

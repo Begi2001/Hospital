@@ -12,9 +12,7 @@ function TopNewsCard({data}) {
         <img src={data.image} alt="" className='image'/>
         <div className='infos'>
             <div className='info'><Calendar/>{data.time}</div>
-            <div className='info'><Author/>{data.author}</div>
             <div className='info'><Views/>{data.views}</div>
-            <div className='info'><Like/>{data.likes}</div>
         </div>
         <p className='title'>{data.title}</p>
         <p className='descr'>{data.descr}</p>

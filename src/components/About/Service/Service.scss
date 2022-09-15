@@ -1,2 +1,46 @@
 @import "../../../assets/variables/colors";
 
+.about__service {
+  margin-bottom: 100px;
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px 30px;
+    &-Image {
+      max-width: 530px;
+      max-height: 580px;
+    }
+
+    .about__Info {
+      &-title {
+        font-weight: 600;
+        font-size: 24px;
+        color: $dark;
+        margin-bottom: 32px;
+      }
+
+      &-type {
+        color: $dark;
+        margin-bottom: 12px;
+      }
+
+      &-descr {
+        font-size: 20px;
+        color: $black;
+        margin-bottom: 40px;
+      }
+
+      &-service {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0 10px;
+        margin-bottom: 25px;
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
