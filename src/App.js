@@ -32,7 +32,7 @@ function App() {
                   <Route path='/service' element={<Service/>}/>
                   <Route path='/services' element={<Services/>}/>
               </Routes>
-              {/*<Footer/>*/}
+              <Footer/>
           </>
     );
 }

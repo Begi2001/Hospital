@@ -6,15 +6,17 @@ import Doctors from "./Doctors/Doctors";
 import News from "./News/News";
 import Blog from "./Blog/Blog";
 import Testimonial from "./Testimonial/Testimonial";
+import Faq from '../UsableComponents/FAQs/Faq';
 
 function Home() {
     return (<>
         {/*<Carousel/>*/}
-        <Service/>
+        {/* <Service/>
         <About/>
         <Doctors/>
         <News/>
-        <Blog/>
+        <Blog/> */}
+        <Faq/>
         {/*<Testimonial/>*/}
     </>)
 }
