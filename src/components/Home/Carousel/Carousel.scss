@@ -15,7 +15,8 @@
 
   .main {
     position: absolute;
-    top: 30%;
+    top: -350px;
+    left: 0;
     width: 540px;
     .subtitle{
       font-size: 18px;
@@ -59,7 +60,7 @@
       justify-content: flex-start;
       align-items: center;
       gap: 20px;
-      width: 300px;
+      width: 290px;
       .circle {
         width: 20%;
         display: flex;

@@ -1,0 +1,40 @@
+@import "../../../../assets/variables/colors";
+
+.bigblog{
+  max-width: 570px;
+
+  &__header {
+    margin-bottom: 26px;
+
+    &-image {
+      width: 100%;
+      max-width: 570px;
+      max-height: 336px;
+    }
+  }
+
+  &__body {
+    &-where {
+      font-size: 20px;
+      margin-bottom: 19px;
+    }
+
+    &-title {
+      font-weight: 800;
+      font-size: 40px;
+      line-height: 32px;
+      color: $dark;
+      margin-bottom: 12px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0 5px;
+    font-size: 16px;
+    color: $black;
+    opacity: .5;
+  }
+}

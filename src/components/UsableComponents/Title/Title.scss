@@ -59,6 +59,7 @@
       }
 
       &:hover {
+        transition: .5s ease-in;
         margin-right: 15px;
       }
     }
