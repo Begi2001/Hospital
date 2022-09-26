@@ -4,4 +4,4 @@ import App from './App';
 import {BrowserRouter} from "react-router-dom";
 import './index.css'
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<BrowserRouter><App/></BrowserRouter>);
+root.render(<BrowserRouter><App style={{overflowY:'clip'}}/></BrowserRouter>);

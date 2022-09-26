@@ -15,7 +15,7 @@ function Home() {
         <Doctors/>
         <News/>
         <Blog/>
-        <Testimonial/>
+        {/*<Testimonial/>*/}
     </>)
 }
 

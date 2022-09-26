@@ -1,0 +1,115 @@
+@import "../../../../assets/variables/colors";
+
+.fullwidth {
+  position: relative;
+  margin: 0 auto;
+  max-height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  row-gap: 30px;
+  background-color: $light;
+  border-radius: 10px;
+  @media (max-width: 700px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__head {
+    max-width: 70%;
+    max-height: 400px;
+    color: $light;
+
+    &-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 10px 0 0 10px;
+      width: 70%;
+      max-height: 100%;
+      object-fit: cover;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 42.25%, rgba(0, 0, 0, 0.65) 100%);
+      @media (max-width: 700px) {
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+      }
+    }
+
+    &-title {
+      width: 45%;
+      position: absolute;
+      left: 3%;
+      bottom: 12%;
+      font-style: normal;
+      font-weight: 700;
+      font-size: calc(20px + 12 * (100vw / 1280));
+      @media (max-width: 970px) {
+        font-size: calc(20px + (12 + 12 * .7) * ((100vw - 375px) / 1280));
+      }
+      @media (max-width: 700px){
+        top: 12%;
+      }
+      font-family: 'Playfair Display', serif;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+    }
+
+    &-infos {
+      position: absolute;
+      left: 3%;
+      bottom: 4%;
+      display: flex;
+      gap: 0 10px;
+      font-size: 14px;
+      @media (max-width: 700px) {
+        top: 4%;
+      }
+
+      .time {
+
+      }
+
+      .country {
+
+      }
+    }
+  }
+
+  &__body {
+    width: 30%;
+    padding: 2% 3.5%;
+    color: $black;
+    @media (max-width: 700px) {
+      width: 100%;
+      margin-top: 50%;
+    }
+
+    &-title {
+      font-size: calc(14px + 4 * (100vw / 1280));
+      @media (max-width: 970px) {
+        font-size: calc(14px + (4 + 4 * .7) * ((100vw - 375px) / 1280));
+      }
+      line-height: calc(12px + 14 * (100vw / 1280));
+      @media (max-width: 970px) {
+        line-height: calc(12px + (14 + 14 * .7) * ((100vw - 375px) / 1280));
+      }
+      font-family: 'Playfair Display', serif;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 11;
+      -webkit-box-orient: vertical;
+    }
+
+    .nisi {
+      font-size: calc(20px + 15 * (100vw / 1280));
+      @media (max-width: 970px) {
+        font-size: calc(20px + (15 + 15 * .7) * ((100vw - 375px) / 1280));
+      }
+      font-family: 'Playfair Display', serif;
+    }
+  }
+}
