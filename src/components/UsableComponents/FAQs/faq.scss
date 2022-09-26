@@ -1,28 +1,81 @@
-.faq{
-    margin: 0 auto;
-    padding: 50px 0;
-    max-width: 1218px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-  @media(max-width: 430px){
+.faq {
+  margin: 0 auto;
+  max-width: 1218px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  @media (max-width: 430px) {
     max-width: 400px;
     margin: 0 auto;
   }
-    .title{
-      font-weight: 500;
-      font-size: 65px;
-      color: #303A42;
-      margin-bottom: 30px;
-    }
-    .accordeons{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      column-gap: 40px;
+  .title {
+    font-weight: 500;
+    font-size: 65px;
+    color: #303a42;
+    margin-bottom: 30px;
+  }
+  .accordeons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 40px;
+    height: 100%;
+    border: 1px solid rgb(204, 255, 0);
 
+    @media (max-width: 1156px) {
     }
   }
+  .firstacc {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 0;
+    @media (max-width: 1156px) {
+      padding: 50px 0;
+    }
+    @media (max-width: 570px) {
+      border: 1px solid rgb(204, 255, 0);
+      width: 100%;
+      padding: 50px 0px;
+    }
+    .MuiPaper-rootMui {
+      border: 1pxs solid black;
+    }
+    .css-1qndlcl-MuiPaper-root-MuiAccordion-root {
+      @media (max-width: 570px) {
+        border: 1px solid red;
+        margin: 0;
+      }
+    }
+  }
+  .secondacc {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 0;
+
+    @media (max-width: 1156px) {
+      padding: 50px 0;
+    }
+    @media (max-width: 570px) {
+      border: 1px solid rgb(204, 255, 0);
+      width: 100%;
+      padding: 50px 0px;
+      margin-left: 0px;
+    }
+    .css-1qndlcl-MuiPaper-root-MuiAccordion-root {
+      @media (max-width: 570px) {
+        width: 350px;
+        margin: 0;
+        margin-left: -180px;
+      }
+    }
+  }
+}
