@@ -46,7 +46,7 @@ function Navbar() {
                 <div className='hamburger'>
                     {!!open ? <Exit onClick={e => setOpen(false)}/> : <Menu onClick={e => setOpen(true)}/>}
                 </div>
-                <div className='sidebar' style={{top: !!open ? '145px' : '-300%'}}>
+                <div className='sidebar' style={{top: !!open ? '140px' : '-300%'}}>
                     {data.map(menu => (<NavLink key={menu.id} to={menu.url}>
                         <p id={menu.id} onClick={e => {
                             setID(e.target.id);

@@ -13,6 +13,11 @@
     flex-direction: column;
     row-gap: 35px;
     margin-bottom: 100px;
+    @media (max-width: 425px) {
+      justify-content: center;
+      align-items: center;
+    }
+
 
     &-title {
       color: $darkblue;
@@ -24,6 +29,10 @@
       align-items: flex-start;
       flex-wrap: wrap;
       gap: 50px 36px;
+      @media (max-width: 425px) {
+        justify-content: center;
+        align-items: center;
+      }
     }
   }
   &__bottom{

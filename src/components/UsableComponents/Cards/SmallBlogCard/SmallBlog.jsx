@@ -1,9 +1,10 @@
 import React from 'react'
 import './SmallBlog.scss'
+import {NavLink} from "react-router-dom";
 
 function SmallBlog({data}) {
     return (
-          <div className='smallblog'>
+          <NavLink to={`/blog/${data.id}`} className='smallblog'>
               <div className='smallblog__header'>
                   <img src={data.image} alt="" className='smallblog__header-image'/>
               </div>
@@ -14,7 +15,7 @@ function SmallBlog({data}) {
               <div className='smallblog__footer'>
                   <p className='smallblog__footer-time'>{data.time}</p>
               </div>
-          </div>
+          </NavLink>
     )
 }
 

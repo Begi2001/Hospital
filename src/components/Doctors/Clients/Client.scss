@@ -29,8 +29,7 @@
 
   &__subtitle {
     font-size: calc(18px + 6 * (100vw / 1280));
-    color: $black;
-    opacity: .5;
+    color: $light;
     @media (max-width: 970px) {
       font-size: calc(18px + (6 + 6 * .7) *  ((100vw - 375px) / 1240));
     }

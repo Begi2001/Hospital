@@ -1,11 +1,12 @@
 import React from 'react'
 import './FullWidth.scss'
+import {NavLink} from "react-router-dom";
 
 
 
 function FullWidth({data}) {
 
-    return (<>
+    return (<NavLink to={`/news/${data.id}`}>
                     <div className='fullwidth'>
                         <div className='fullwidth__head'>
                             <img src={data.image} alt="" className='fullwidth__head-image'/>
@@ -20,7 +21,7 @@ function FullWidth({data}) {
                             <p className='fullwidth__body-title'>read more</p>
                         </div>
                     </div>
-          </>
+          </NavLink>
     )
 }
 

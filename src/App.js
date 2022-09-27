@@ -15,6 +15,8 @@ import Navbar from "./components/UsableComponents/Navbar/Navbar";
 import Footer from "./components/UsableComponents/Footer/Footer";
 import TopNavbar from "./components/UsableComponents/TopNavbar/TopNavbar";
 import Operation from "./components/Operation/Operation";
+import NewsSingle from "./components/NewsSingle/NewsSingle";
+import BlogSingle from "./components/BlogSingle/BlogSingle";
 
 function App() {
     return (<>
@@ -23,13 +25,15 @@ function App() {
               <Routes>
                   <Route path='/' element={<Home/>}/>
                   <Route path='/about' element={<About/>}/>
-                  <Route path='/aboutdoctor' element={<AboutDoctor/>}/>
-                  <Route path='/operation' element={<Operation/>}/>
+                  <Route path='/doctors/:id' element={<AboutDoctor/>}/>
+                  <Route path='/operation/:id' element={<Operation/>}/>
                   <Route path='/news' element={<News/>}/>
+                  <Route path='/news/:id' element={<NewsSingle/>}/>
                   <Route path='/blog' element={<Blog/>}/>
+                  <Route path='/blog/:id' element={<BlogSingle/>}/>
                   <Route path='/contact' element={<Contact/>}/>
                   <Route path='/doctors' element={<Doctors/>}/>
-                  <Route path='/service' element={<Service/>}/>
+                  <Route path='/service/:id' element={<Service/>}/>
                   <Route path='/services' element={<Services/>}/>
               </Routes>
               <Footer/>

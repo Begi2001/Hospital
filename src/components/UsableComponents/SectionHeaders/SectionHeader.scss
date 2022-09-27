@@ -34,7 +34,7 @@
       line-height: 19px;
       font-size: calc(14px + 2 * (100vw / 1240));
       @media (max-width: 970px) {
-        line-height: 10px;
+        line-height: 15px;
         font-size: calc(14px + (2 + 2 / .7) * ((100vw - 375px) / 1240));
       }
     }

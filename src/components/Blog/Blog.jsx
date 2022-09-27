@@ -8,7 +8,7 @@ import './Blog.scss'
 import SmallBlog from "../UsableComponents/Cards/SmallBlogCard/SmallBlog";
 
 const data = [{
-    id: 1, title: 'Our Doctors', descr: 'Detail about our Doctors', image: photo,
+    id: 1, title: 'Our Blog', descr: 'Detail about our Blog', image: photo,
 }]
 
 const top = [{
@@ -16,6 +16,7 @@ const top = [{
 }, {
     id: 1, image: blog, type: 'Design', title: 'Digital marketing channels', time: ' 23 Nov. 2021',
 }]
+
 const posts = [{
     id: 1, image: blog, type: 'Design', title: 'Digital marketing channels', time: ' 23 Nov. 2021',
 }, {

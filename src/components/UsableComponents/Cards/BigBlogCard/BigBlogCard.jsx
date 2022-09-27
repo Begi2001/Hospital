@@ -1,12 +1,13 @@
 import React from 'react'
 import './BigBlogCard.scss'
 import İmg from '../../../../assets/images/aqImg2.png'
+import {NavLink} from "react-router-dom";
 
 function BigBlog({data}) {
 
     console.log(data)
 
-    return (<div className='bigblog'>
+    return (<NavLink to={`/blog/${data.id}`} className='bigblog'>
         <div className='bigblog__header'>
             <img src={data.image} alt="" className='bigblog__header-image'/>
         </div>
@@ -17,7 +18,7 @@ function BigBlog({data}) {
         <div className='bigblog__footer'>
             <p className='bigblog__footer-time'>{data.time}</p>
         </div>
-    </div>)
+    </NavLink>)
 }
 
 export default BigBlog
