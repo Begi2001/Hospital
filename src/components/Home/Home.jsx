@@ -10,10 +10,10 @@ import Faq from '../UsableComponents/FAQs/Faq';
 
 function Home() {
     return (<>
-        {/*<Carousel/>*/}
-         <Service/>
+        <Carousel/>
+        <Service/>
         <About/>
-        {/*<Doctors/>*/}
+        <Doctors/>
         <News/>
         <Blog/>
         <Faq/>

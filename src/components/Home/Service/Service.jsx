@@ -60,7 +60,7 @@ function Service() {
     return (<section className='service'>
         <Container>
             <div className='wrapper'>
-                <Title children={'Service'} url={'/service'}/>
+                <Title children={'Service'} url={'/services'}/>
                 <div className='services'>
                     {data.map(serv => (<div key={serv.id} className='item'>
                         <img src={serv.img} alt=""/>

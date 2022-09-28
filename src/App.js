@@ -17,11 +17,13 @@ import TopNavbar from "./components/UsableComponents/TopNavbar/TopNavbar";
 import Operation from "./components/Operation/Operation";
 import NewsSingle from "./components/NewsSingle/NewsSingle";
 import BlogSingle from "./components/BlogSingle/BlogSingle";
+import Popup from "./components/UsableComponents/Popup/Popup";
 
 function App() {
     return (<>
               <TopNavbar/>
               <Navbar/>
+              <Popup/>
               <Routes>
                   <Route path='/' element={<Home/>}/>
                   <Route path='/about' element={<About/>}/>

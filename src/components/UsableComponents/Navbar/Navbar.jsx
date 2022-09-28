@@ -29,10 +29,10 @@ function Navbar() {
     return (<nav className='main__navbar'>
         <Container>
             <div className='wrapper'>
-                <div className='logo'>
+                <NavLink to={'/'} className='logo'>
                     <img src={Logo} alt="" className='icon'/>
                     <img src={LogoText} alt="" className='text'/>
-                </div>
+                </NavLink>
                 <div className='menu'>
                     {data.map(menu => (<NavLink key={menu.id} to={menu.url}>
                         <p id={menu.id} onClick={e => setID(e.target.id)} className='title' style={{
@@ -62,7 +62,9 @@ function Navbar() {
         <div className='order' style={{
             top: order !== true ? '-200%' : '0'
         }}>
-            <div className='exitBtn' style={{display:order !== true ? 'none' : 'block'}} onClick={()=>setOrder(false)}>
+            <div className='exitBtn' style={{
+                display: order !== true ? 'none' : 'block'
+            }} onClick={() => setOrder(false)}>
                 <ExitLight/>
             </div>
             <div className='order__text'>
