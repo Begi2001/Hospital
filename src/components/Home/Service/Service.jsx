@@ -11,56 +11,62 @@ import Gynecology from '../../../assets/images/Gynecology.png'
 import Urology from '../../../assets/images/Urology.png'
 import Pediatric from '../../../assets/images/Pediatric.png'
 import Title from "../../UsableComponents/Title/Title";
+import {useTranslation} from "react-i18next";
 
-const data = [{
-    id: 1,
-    img: Traumatology,
-    title: 'Traumatology',
-    descr: 'One of the key classifications is between traditional small molecule drugs; usually derived from chemical synthesis.',
-    url: './service/',
-    urlText: 'Learn More'
-}, {
-    id: 2,
-    img: Surgery,
-    title: 'Surgery',
-    descr: 'One of the key classifications is between traditional small molecule drugs; usually derived from chemical synthesis.',
-    url: './service/',
-    urlText: 'Learn More'
-}, {
-    id: 3,
-    img: Gynecology,
-    title: 'Gynecology',
-    descr: 'One of the key classifications is between traditional small molecule drugs; usually derived from chemical synthesis.',
-    url: './service/',
-    urlText: 'Learn More'
-}, {
-    id: 4,
-    img: Urology,
-    title: 'Urology',
-    descr: 'One of the key classifications is between traditional small molecule drugs; usually derived from chemical synthesis.',
-    url: './service/',
-    urlText: 'Learn More'
-}, {
-    id: 5,
-    img: Pediatric,
-    title: 'Pediatric Urology',
-    descr: 'One of the key classifications is between traditional small molecule drugs; usually derived from chemical synthesis.',
-    url: './service/',
-    urlText: 'Learn More'
-}, {
-    id: 6,
-    img: Gynecology,
-    title: 'Traumatology',
-    descr: 'One of the key classifications is between traditional small molecule drugs; usually derived from chemical synthesis.',
-    url: './service/',
-    urlText: 'Learn More'
-},];
+
 
 function Service() {
+
+    const {t} = useTranslation();
+
+    const data = [{
+        id: 1,
+        img: Traumatology,
+        title: 'Traumatology',
+        descr: t('servicedescr'),
+        url: './service/',
+        urlText: t('urltext')
+    }, {
+        id: 2,
+        img: Surgery,
+        title: 'Surgery',
+        descr: t('servicedescr'),
+        url: './service/',
+        urlText: t('urltext')
+    }, {
+        id: 3,
+        img: Gynecology,
+        title: 'Gynecology',
+        descr: t('servicedescr'),
+        url: './service/',
+        urlText: t('urltext')
+    }, {
+        id: 4,
+        img: Urology,
+        title: 'Urology',
+        descr: t('servicedescr'),
+        url: './service/',
+        urlText: t('urltext')
+    }, {
+        id: 5,
+        img: Pediatric,
+        title: 'Pediatric Urology',
+        descr: t('servicedescr'),
+        url: './service/',
+        urlText: t('urltext')
+    }, {
+        id: 6,
+        img: Gynecology,
+        title: 'Traumatology',
+        descr: t('servicedescr'),
+        url: './service/',
+        urlText: t('urltext')
+    },];
+
     return (<section className='service'>
         <Container>
             <div className='wrapper'>
-                <Title children={'Service'} url={'/services'}/>
+                <Title children={t('service')} url={'/services'}/>
                 <div className='services'>
                     {data.map(serv => (<div key={serv.id} className='item'>
                         <img src={serv.img} alt=""/>

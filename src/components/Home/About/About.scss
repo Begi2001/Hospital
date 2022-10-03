@@ -53,6 +53,7 @@
       justify-content: flex-start;
       align-items: center;
       span{
+        text-transform: capitalize;
         color: $light;
         font-size: 22px;
         font-weight: 500;

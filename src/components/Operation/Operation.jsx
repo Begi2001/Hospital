@@ -6,7 +6,9 @@ import Container from "../UsableComponents/Container/Container";
 import './Operation.scss'
 
 function Operation() {
-    const data = [{
+
+
+    const Ali = [{
         id: 1, title: 'Our Blog', descr: 'Detail about our Blog', image: photo,
     }]
 
@@ -20,7 +22,7 @@ function Operation() {
     }]
 
     return (<section className='operation__wrapper'>
-        {data.map(type => (<SectionHeaders data={type}/>))}
+        {Ali.map(type => (<SectionHeaders data={type}/>))}
         <Container>
             <div className='operation__wrapper-item'>
                 {operation.map(oper => (<>

@@ -18,9 +18,9 @@ function Popup() {
         <h1 className='modal__title'>Contact Us</h1>
         <p className='modal__descr'>Get your name and number for a free consultation, responsible persons will
             contact you in 3 minutes.</p>
-        <label className='modal__label' for="name">Your Name <span>*</span> </label>
+        <label className='modal__label' htmlFor="name">Your Name <span>*</span> </label>
         <input type="text" className='modal__input' placeholder='Enter your Name'/>
-        <label className='modal__label' for="name">Your Number <span>*</span> </label>
+        <label className='modal__label' htmlFor="name">Your Number <span>*</span> </label>
         <input type="tel" className='modal__input' placeholder='+998 99 888-77-66'/>
         <div className='modal__btns'>
             <button className='btn reject'>Rejection</button>

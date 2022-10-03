@@ -36,7 +36,7 @@ function About() {
             <Service/>
             <Programs/>
             <Question/>
-            {/*<Faq/>*/}
+            <Faq/>
         </div>
     </section>)
 }

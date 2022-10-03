@@ -6,8 +6,10 @@ import {ReactComponent as Author} from "../../../../assets/icons/Author.svg";
 import {ReactComponent as Views} from "../../../../assets/icons/Views.svg";
 import {ReactComponent as Like} from "../../../../assets/icons/Like.svg";
 import ReadMore from "../../Buttons/ReadMore/ReadMore.btn";
+import {useTranslation} from "react-i18next";
 
 function TopNewsCard({data}) {
+    const {t} = useTranslation()
     return (<div className='top__news'>
         <img src={data.image} alt="" className='image'/>
         <div className='infos'>
@@ -16,7 +18,7 @@ function TopNewsCard({data}) {
         </div>
         <p className='title'>{data.title}</p>
         <p className='descr'>{data.descr}</p>
-        <ReadMore children={'Read More'} url={`./news/${data.id}`}/>
+        <ReadMore children={t('urltext')} url={`./news/${data.id}`}/>
     </div>)
 }
 

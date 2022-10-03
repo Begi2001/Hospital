@@ -1,5 +1,6 @@
 @import '../../../assets/variables/colors';
 .titles {
+  text-transform: capitalize;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -40,7 +41,7 @@
   }
 
   .link {
-    width: 230px;
+    width: 260px;
     display: flex;
     justify-content: flex-end;
     align-items: center;

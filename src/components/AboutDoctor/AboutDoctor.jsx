@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import SectionHeaders from "../UsableComponents/SectionHeaders/SectionHeader";
 import Photo from "../../assets/images/docsHeader.png";
 import Container from "../UsableComponents/Container/Container";
@@ -8,10 +8,18 @@ import photo2 from '../../assets/images/sign 1.svg'
 import photo3 from '../../assets/images/Frame 250.png'
 import './AboutDoctor.scss'
 import {NavLink} from "react-router-dom";
+import {useGetDatesQuery} from "../../redux";
 
 function AboutDoctor() {
+    const [img,setImage] = useState('');
 
-    const data = [{
+    const {data=[],isLoading,isError} = useGetDatesQuery()
+    console.log(data)
+
+    if (isError) return <div style={{fontSize:'100px',color:"red"}}>Error</div>
+
+
+    const ali = [{
         id: 1, title: 'Our Doctors', descr: 'Detail about our Doctors', image: Photo,
     }]
 
@@ -49,7 +57,7 @@ function AboutDoctor() {
     },]
 
     return (<section className='about__single'>
-        {data.map(serv => (<SectionHeaders data={serv}/>))}
+        {ali.map(serv => (<SectionHeaders data={serv}/>))}
         <Container>
             <Founder data={founder}/>
             <div className='about__single-bio'>

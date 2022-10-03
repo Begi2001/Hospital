@@ -10,6 +10,7 @@ import news3 from '../../../assets/images/news3.png'
 import news4 from '../../../assets/images/news4.png'
 import TopNewsCard from "../../UsableComponents/Cards/TopNewsCard/TopNewsCard";
 import NewsCard from "../../UsableComponents/Cards/NewsCard/NewsCard";
+import {useTranslation} from "react-i18next";
 
 const data = [{
     id: 1,
@@ -65,6 +66,7 @@ const data = [{
 
 
 function News() {
+    const {t} = useTranslation()
     const [top, setTop] = useState([]);
     const [news, setNews] = useState([]);
 
@@ -82,7 +84,7 @@ function News() {
 
     return (<section className='news'>
         <Container>
-            <Title url={'/news'} children={'News'}/>
+            <Title url={'/news'} children={t('news')}/>
             <div className='wrapper'>
                 <TopNewsCard data={top}/>
                 <div className='morenews'>

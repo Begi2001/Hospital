@@ -3,14 +3,16 @@ import './Links.scss'
 import Hearth from "../../../../assets/icons/heart-pulse.svg";
 import Geo from "../../../../assets/icons/geo-alt.svg";
 import Mail from "../../../../assets/icons/envelope-open.svg";
+import {useTranslation} from "react-i18next";
 
-const data = [
-    {id: 1, icon: Geo, title: 'Get directions', descr: 'Find us on the map', url: '/contacts'},
-    {id: 1, icon: Mail, title: 'Appointment', descr: 'Send us an email', url: 'mailto:nomonovvv7@gmail.com'},
-    {id: 1, icon: Hearth, title: 'Emergency Service', descr: '+998 97 234 34 07', url: 'tel:+998972343407'},
-]
 
 function Links() {
+const {t} = useTranslation()
+const data = [
+    {id: 1, icon: Geo, title: t('linktitle1'), descr: t('linkdescr1'), url: '/contacts'},
+    {id: 1, icon: Mail, title: t('linktitle2'), descr: t('linkdescr2'), url: 'mailto:nomonovvv7@gmail.com'},
+    {id: 1, icon: Hearth, title: t('linktitle3'), descr: '+998 97 234 34 07', url: 'tel:+998972343407'},
+]
     return (
           <section className='footer__link'>
               {data.map(link => (

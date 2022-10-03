@@ -9,6 +9,7 @@ import Doc3 from "../../../assets/images/doc3.png";
 import Doc4 from "../../../assets/images/doc4.png";
 import Doc5 from "../../../assets/images/doc5.png";
 import DoctorCard from "../../UsableComponents/Cards/DoctorCard/DoctorCard";
+import {useGetDataQuery} from "../../../redux";
 
 const data = [
     {id: 1, img: Doc1, name: "Toirjon", lastname: "Tojiev Xursanovich"},
@@ -24,6 +25,8 @@ const data = [
 ];
 
 function Doctors() {
+    /*const {data = []} = useGetDataQuery('doctors')
+    console.log(data);*/
     return (
           <section className="doctors">
               <Container>

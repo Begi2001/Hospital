@@ -6,16 +6,15 @@
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
-  @media (max-width: 430px) {
-    max-width: 400px;
-    margin: 0 auto;
-  }
+
   .title {
     font-weight: 500;
     font-size: 65px;
     color: #303a42;
     margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
   }
+
   .accordeons {
     width: 100%;
     height: 100%;
@@ -24,54 +23,42 @@
     align-items: center;
     flex-wrap: wrap;
     column-gap: 40px;
-  }
-  .firstacc {
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 100px 0;
-    @media (max-width: 1156px) {
-      padding: 50px 0;
-    }
-    @media (max-width: 570px) {
-      width: 100%;
-      padding: 50px 0px;
-    }
-    .MuiPaper-rootMui {
-      border: 1px solid black;
-    }
-    .css-1qndlcl-MuiPaper-root-MuiAccordion-root {
-      @media (max-width: 570px) {
-        width: 100% !important;
-        margin: 0;
+    margin-bottom: 100px;
+    padding: 0 15px;
+
+    .firstacc {
+      width: 45%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      .css-1wtkyes-MuiPaper-root-MuiAccordion-root.Mui-expanded,
+      .css-o4b71y-MuiAccordionSummary-content.Mui-expanded{
+        margin: 0px auto;
+      }
+      .css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded{
+        min-height: 48px;
+      }
+      @media (max-width: 860px) {
+        width: 100%;
       }
     }
-  }
-  .secondacc {
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 100px 0;
 
-
-   @media (max-width: 1156px) {
-      padding: 50px 0;
-    }
-    @media (max-width: 570px) {
-      width: 100%;
-      padding: 50px 0px;
-    }
-    .MuiPaper-rootMui {
-      border: 1px solid black;
-    }
-    .css-1qndlcl-MuiPaper-root-MuiAccordion-root {
-      @media (max-width: 570px) {
-        width: 100% !important;
-        margin: 0;
+    .secondacc {
+      width: 45%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      .css-1wtkyes-MuiPaper-root-MuiAccordion-root.Mui-expanded,
+      .css-o4b71y-MuiAccordionSummary-content.Mui-expanded{
+        margin: 0px auto;
+      }
+      .css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded{
+        min-height: 48px;
+      }
+      @media (max-width: 860px) {
+        width: 100%;
       }
     }
   }
