@@ -12,14 +12,16 @@ import Urology from '../../../assets/images/Urology.png'
 import Pediatric from '../../../assets/images/Pediatric.png'
 import Title from "../../UsableComponents/Title/Title";
 import {useTranslation} from "react-i18next";
-
+import {useGetDataQuery} from "../../../redux";
 
 
 function Service() {
 
     const {t} = useTranslation();
 
-    const data = [{
+    const {data = [], isLoading, isError} = useGetDataQuery('our-service')
+
+    /*const data = [{
         id: 1,
         img: Traumatology,
         title: 'Traumatology',
@@ -61,21 +63,28 @@ function Service() {
         descr: t('servicedescr'),
         url: './service/',
         urlText: t('urltext')
-    },];
+    },];*/
+
+
+    if (isError) return <div><h1>Error</h1></div>
+    if (isLoading) return <div><h1>Loading...</h1></div>
 
     return (<section className='service'>
         <Container>
-            <div className='wrapper'>
-                <Title children={t('service')} url={'/services'}/>
-                <div className='services'>
-                    {data.map(serv => (<div key={serv.id} className='item'>
-                        <img src={serv.img} alt=""/>
-                        <p className='title'>{serv.title}</p>
-                        <p className='descr'>{serv.descr}</p>
-                        <NavLink className='link' to={`${serv.url}${serv.id}`}>{serv.urlText}<Arrow/></NavLink>
-                    </div>))}
+            {data.result.map(serv => (
+                <div className='wrapper'>
+                    <Title children={t('service')} url={'/services'}/>
+                    <div className='services'>
+                        {serv.our_service_departments.map(ser => (<div key={ser.department_id} className='item'>
+                            <img src={ser.image} alt=""/>
+                            <p className='title'>{ser.name_ru}</p>
+                            <p className='descr'>{ser.description_ru}</p>
+                            <NavLink className='link'
+                                     to={`/service/${ser.department_id}`}>{t('urltext')}<Arrow/></NavLink>
+                        </div>))}
+                    </div>
                 </div>
-            </div>
+            ))}
         </Container>
     </section>)
 }

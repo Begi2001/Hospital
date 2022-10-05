@@ -6,8 +6,9 @@ import QuesImg1 from '../../../assets/images/aqImg1.png'
 import QuesImg2 from '../../../assets/images/aqImg2.png'
 import QuesImg3 from '../../../assets/images/aqImg3.png'
 import QuesImg4 from '../../../assets/images/aqImg4.png'
+import {useGetDataQuery} from "../../../redux";
 
-const questions = [{
+/*const questions = [{
     id: 1,
     img: QuesImg1,
     question: 'WHAT IT FEELS LIKE TO BE OUR FRIEND',
@@ -31,14 +32,19 @@ const questions = [{
     question: 'WHAT IT FEELS LIKE TO BE OUR FRIEND',
     answer: 'At Grand M we believe that your medical care should be highly individual. You are unique and so are your health priorities.',
     descr: 'When you engage Grand M you can be confident that we will find the very best solutions, tailored to your personal circumstances.'
-},];
+},];*/
 
 
 function Question() {
-    return (
-          <div className='questions'>
-              {questions.map(ques => (<QuestionCard key={ques.id} data={ques}/>))}
-          </div>
+    const {data = [],isLoading,isError} = useGetDataQuery('about-us')
+
+    if (isError) return <div> <h1>Error</h1> </div>
+    if (isLoading) return <div> <h1>Loading...</h1> </div>
+    return (<>
+            {data.result.map(ques => (<div className='questions'>
+                {ques.aboutus_content.map(que => (<QuestionCard key={data.content_id} data={que}/>))}
+            </div>))}
+        </>
     )
 }
 

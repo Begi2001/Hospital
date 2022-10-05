@@ -12,7 +12,7 @@ import photo2 from "../../assets/images/sign 1.svg";
 import photo3 from '../../assets/images/founder.png'
 
 
-const data = [{
+const ali = [{
     id: 1, title: 'About US', descr: 'Story about our hospital', image: photo,
 }]
 
@@ -28,16 +28,16 @@ const founder = [{
 
 
 function About() {
-
     return (<section className='aboutMain'>
         <div className='wrapper'>
-            {data.map(ab => (<SectionHeaders section={'about'} data={ab}/>))}
+            {ali.map(ab => (<SectionHeaders section={'about'} data={ab}/>))}
             <Founder data={founder}/>
             <Service/>
             <Programs/>
             <Question/>
             <Faq/>
         </div>
+        ))}
     </section>)
 }
 

@@ -25,7 +25,7 @@ function Carousel1() {
                         <p className='subtitle'>{t("care1")}</p>
                         <p className='title'>{t('carouseltitle1')}<br/> {t('carouseldescr1')}</p>
                         <div className='wrapper'>
-                            <LearnMoreBtn url={'/service'} children={'Our Service'}/>
+                            <LearnMoreBtn url={'/service'} children={t('service')}/>
                             <hr/>
                         </div>
                     </div>
