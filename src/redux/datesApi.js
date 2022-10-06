@@ -10,8 +10,11 @@ export const datesApi = createApi({
         }),
         getData: build.query({
             query: (name) => `${name}`
-        })
+        }),
+        getDoctor: build.query({
+            query: (id) => `/doctors/single/${id}`
+        }),
     })
 })
 
-export const {useGetDatesQuery, useGetDateQuery, useGetServiceQuery, useGetDataQuery} = datesApi;
+export const {useGetDatesQuery, useGetDateQuery, useGetServiceQuery, useGetDataQuery,useGetDoctorQuery} = datesApi;

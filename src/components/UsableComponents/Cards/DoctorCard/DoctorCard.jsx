@@ -1,6 +1,7 @@
 import React from 'react'
-import './DoctorCard.scss'
 import {NavLink} from "react-router-dom";
+
+import './DoctorCard.scss'
 
 function DoctorCard({data}) {
     const lang = localStorage.getItem('i18nextLng')

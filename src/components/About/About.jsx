@@ -1,42 +1,46 @@
 import React from 'react'
+import {useGetDataQuery} from "../../redux";
 
 import './About.scss'
-import Faq from "../UsableComponents/FAQs/Faq";
-import Service from "./Service/Service";
-import SectionHeaders from "../UsableComponents/SectionHeaders/SectionHeader";
-import photo from "../../assets/images/aboutImg.png";
-import Founder from "./Founder/Founder";
-import Programs from "./Programs/Programs";
-import Question from "./Questions/Question";
 import photo2 from "../../assets/images/sign 1.svg";
 import photo3 from '../../assets/images/founder.png'
 
+import Faq from "../UsableComponents/FAQs/Faq";
+import Service from "./Service/Service";
+import SectionHeaders from "../UsableComponents/SectionHeaders/SectionHeader";
+import Founder from "./Founder/Founder";
+import Programs from "./Programs/Programs";
+import Question from "./Questions/Question";
 
-const ali = [{
-    id: 1, title: 'About US', descr: 'Story about our hospital', image: photo,
-}]
-
-const founder = [{
+const founder = {
     id: 1,
     image: photo3,
-    title: 'Story about our hospital',
+    full_name_uz: 'Story about our hospital',
+    full_name_ru: 'Story about our hospital',
     subtitle: 'And how we get to this point',
-    descr: 'One of the first major discoveries relevant to the field of pulmonology was the discovery of pulmonary circulation. Originally, it was thought that blood reaching the right side of the heart passed through small ‘pores’ in the septum.',
+    biography_uz: 'One of the first major discoveries relevant to the field of pulmonology was the discovery of pulmonary circulation. Originally, it was thought that blood reaching the right side of the heart passed through small ‘pores’ in the septum.',
+    biography_ru: 'One of the first major discoveries relevant to the field of pulmonology was the discovery of pulmonary circulation. Originally, it was thought that blood reaching the right side of the heart passed through small ‘pores’ in the septum.',
     sing: photo2,
-    author: 'Founder of MEDART Hospital',
-}]
-
+    specification_uz: 'Founder of MEDART Hospital',
+    specification_ru: 'Founder of MEDART Hospital',
+}
 
 function About() {
+    const {data = [], isLoading, isError} = useGetDataQuery('about-us')
+    if (isError) return <div><h1>Error</h1></div>
+    if (isLoading) return <div><h1>Loading...</h1></div>
     return (<section className='aboutMain'>
-        <div className='wrapper'>
-            {ali.map(ab => (<SectionHeaders section={'about'} data={ab}/>))}
-            <Founder data={founder}/>
-            <Service/>
-            <Programs/>
-            <Question/>
-            <Faq/>
-        </div>
+        {data.result.map(about => (
+            <div key={about.id}>
+                <SectionHeaders data={about}/>
+                <div className='wrapper'>
+                    <Founder data={founder}/>
+                    <Service/>
+                    <Programs/>
+                    <Question data={about}/>
+                    <Faq/>
+                </div>
+            </div>
         ))}
     </section>)
 }

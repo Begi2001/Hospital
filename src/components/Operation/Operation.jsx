@@ -26,18 +26,17 @@ function Operation() {
         <Container>
             <div className='operation__wrapper-item'>
                 {operation.map(oper => (<>
-
-                          <div className='operation'>
-                              <div className='operation__info'>
-                                  <h1 className='operation__info-title'>{oper.title}</h1>
-                                  <p className='operation__info-descr'>{oper.descr}</p>
-                              </div>
-                              <img src={oper.image} alt="" className='operation__image'/>
-                          </div>
-                          <img src={oper.video} alt="" className='operation__video'/>
-                          <p className='operation__actions'>Reasons and Actions taken</p>
-                          <p className='operation__text'>{oper.text}</p>
-                      </>
+                        <div className='operation'>
+                            <div className='operation__info'>
+                                <h1 className='operation__info-title'>{oper.title}</h1>
+                                <p className='operation__info-descr'>{oper.descr}</p>
+                            </div>
+                            <img src={oper.image} alt="" className='operation__image'/>
+                        </div>
+                        <img src={oper.video} alt="" className='operation__video'/>
+                        <p className='operation__actions'>Reasons and Actions taken</p>
+                        <p className='operation__text'>{oper.text}</p>
+                    </>
                 ))}
             </div>
         </Container>

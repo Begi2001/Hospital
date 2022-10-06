@@ -35,49 +35,39 @@ function Service() {
         {data.map(serv => (<SectionHeader data={serv}/>))}
         <Container>
             <div className='service__single-wrapper'>
-                {service.map(serv => (
-                      <>
-                          <div key={serv.id} className='service__single-info'>
-                              <h1 className='service__title'>{serv.title}</h1>
-                              <p className='service__descr'>{serv.descr}</p>
-                              <hr className='divider'/>
-                              <p className='service__descr'>{serv.lastdescr}</p>
-                          </div>
-                          {serv.opening.map(open => (
-                                <div className='opening'>
-                                    <p className='opening__title'><span><Clock/></span>{open.title}</p>
-                                    <div className='opening__days'>
-                                    {open.days.map(day => (
-                                          <div className='opening__times'>
-                                              <p className='opening__times-days'>{day.days}</p>
-                                              <p className='opening__times-time'>{day.time}</p>
-                                          </div>
-                                    ))}
-                                    </div>
-                                    <p className='opening__descr'>{open.descr}</p>
+                {service.map(serv => (<>
+                        <div key={serv.id} className='service__single-info'>
+                            <h1 className='service__title'>{serv.title}</h1>
+                            <p className='service__descr'>{serv.descr}</p>
+                            <hr className='divider'/>
+                            <p className='service__descr'>{serv.lastdescr}</p>
+                        </div>
+                        {serv.opening.map(open => (<div className='opening'>
+                                <p className='opening__title'><span><Clock/></span>{open.title}</p>
+                                <div className='opening__days'>
+                                    {open.days.map(day => (<div className='opening__times'>
+                                            <p className='opening__times-days'>{day.days}</p>
+                                            <p className='opening__times-time'>{day.time}</p>
+                                        </div>))}
                                 </div>
-                          ))}
-                      </>
-                ))}
+                                <p className='opening__descr'>{open.descr}</p>
+                            </div>))}
+                    </>))}
             </div>
             <div className='service__single-item'>
-                {service.map(serv => (
-                      <>
-                          <div key={serv.id} className='service__single-info'>
-                              <h1 className='service__title'>{serv.title}</h1>
-                              <p className='service__descr'>{serv.descr}</p>
-                              <hr className='divider'/>
-                              <p className='service__descr'>{serv.lastdescr}</p>
-                          </div>
-                          {serv.emergency.map(emer => (
-                                <div className='opening'>
-                                    <p className='opening__title'><span><Clock/></span>{emer.title}</p>
-                                    <p className='opening__descr emer__descr'>{emer.descr}</p>
-                                    <a href={emer.url}><p className='emer__text'>{emer.text}</p></a>
-                                </div>
-                          ))}
-                      </>
-                ))}
+                {service.map(serv => (<>
+                        <div key={serv.id} className='service__single-info'>
+                            <h1 className='service__title'>{serv.title}</h1>
+                            <p className='service__descr'>{serv.descr}</p>
+                            <hr className='divider'/>
+                            <p className='service__descr'>{serv.lastdescr}</p>
+                        </div>
+                        {serv.emergency.map(emer => (<div className='opening'>
+                                <p className='opening__title'><span><Clock/></span>{emer.title}</p>
+                                <p className='opening__descr emer__descr'>{emer.descr}</p>
+                                <a href={emer.url}><p className='emer__text'>{emer.text}</p></a>
+                            </div>))}
+                    </>))}
             </div>
         </Container>
     </section>)

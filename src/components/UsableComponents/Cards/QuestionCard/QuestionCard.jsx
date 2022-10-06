@@ -4,7 +4,6 @@ import './Question.scss'
 
 function QuestionCard({data}) {
     const lang = localStorage.getItem('i18nextLng')
-
     return (
           <div className='question__card'>
               <img src={data.image} alt="" className='question__card-image'/>

@@ -1,11 +1,23 @@
 import React from 'react'
 
 import './Programs.scss'
+
 import Container from "../../UsableComponents/Container/Container";
 
-const program = [{id: 1, title: 'Personal advice and useful recommendations'}, {
-    id: 2, title: 'Help by studying medical records and pictures'
-}, {id: 3, title: 'An analysis of both personal and family '}];
+const program = [
+    {
+        id: 1,
+        title: 'Personal advice and useful recommendations'
+    },
+    {
+        id: 2,
+        title: 'Help by studying medical records and pictures'
+    },
+    {
+        id: 3,
+        title: 'An analysis of both personal and family '
+    }
+];
 
 function Programs() {
     return (<div className='programs'>

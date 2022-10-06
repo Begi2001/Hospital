@@ -1,11 +1,12 @@
 import React from 'react'
+import {NavLink} from "react-router-dom";
+import {useTranslation} from "react-i18next";
+
 import './About.scss'
 import {ReactComponent as Arrow} from "../../../assets/icons/WhiteArrow.svg";
 
 import Container from "../../UsableComponents/Container/Container";
 import Title from "../../UsableComponents/Title/Title";
-import {NavLink} from "react-router-dom";
-import {useTranslation} from "react-i18next";
 
 function About() {
     const {t} = useTranslation();

@@ -5,16 +5,16 @@ import Container from "../../UsableComponents/Container/Container";
 
 function Founder({data}) {
     return (<Container>
-        {data.map(info => (<div className='absolute'>
-            <img src={info.image} alt="" className='absolute__image'/>
+        <div key={data.doctor_id} className='absolute'>
+            <img src={data.image} alt="" className='absolute__image'/>
             <div className='absolute__infos'>
-                <p className='absolute__infos-title'>{info.title}</p>
-                <p className='absolute__infos-subtitle'>{info.subtitle}</p>
-                <p className='absolute__infos-descr'>{info.descr}</p>
-                <img src={info.sing} alt="" className='absolute__infos-sing'/>
-                <p className='absolute__infos-author'>{info.author}</p>
+                <p className='absolute__infos-title'>{data.full_name_uz}</p>
+                <p className='absolute__infos-subtitle'>{data.subtitle}</p>
+                <p className='absolute__infos-descr'>{data.biography_uz}</p>
+                <img src={data.sing} alt="" className='absolute__infos-sing'/>
+                <p className='absolute__infos-author'>{data.specification_uz}</p>
             </div>
-        </div>))}
+        </div>
     </Container>)
 }
 

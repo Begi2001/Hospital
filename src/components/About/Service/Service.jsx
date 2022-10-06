@@ -1,10 +1,10 @@
 import React from 'react'
 
-import Container from "../../UsableComponents/Container/Container";
 import './Service.scss'
-
 import Photo from '../../../assets/images/aboutService.png'
 import Dot from "../../../assets/icons/Dot.svg";
+
+import Container from "../../UsableComponents/Container/Container";
 
 const data = [{
     id: 1,

@@ -49,12 +49,21 @@
           margin-bottom: 35px;
         }
 
-        &-edu, &-award {
-          max-width: 350px;
-          font-size: 18px;
-          line-height: 22px;
-          margin-bottom: 35px;
-          color: $black;
+        .edu, .award {
+
+          &__edu, &__award {
+            max-width: 350px;
+            font-size: 18px;
+            line-height: 22px;
+            color: $black;
+            margin-bottom: 35px;
+          }
+
+          &:last-child {
+            .divider {
+              display: none;
+            }
+          }
         }
       }
     }

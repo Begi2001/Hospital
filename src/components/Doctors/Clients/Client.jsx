@@ -1,5 +1,6 @@
 import React from 'react'
 import CountUp from "react-countup";
+
 import './Client.scss'
 
 const data = [{
