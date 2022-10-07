@@ -8,7 +8,7 @@ function Title({children, url, color,txt}) {
     const { t } = useTranslation();
 
     return (
-        <div className='titles'>
+        <div data-aos="fade-up" data-aos-duration="1500" className='titles'>
             <div className='title'>
                 <p className='title__first' style={{color:!!txt ? txt : '#3585F9FF'}}>{children}</p>
                 <p className='title__second'

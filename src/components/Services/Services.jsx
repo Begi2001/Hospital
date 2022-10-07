@@ -31,16 +31,18 @@ function Services() {
                     {service.our_service_departments.map(serv => (<ServiceCard data={serv}/>))}
                 </div>
                 <div key={info.id} className='info__wrapper'>
-                    <img src={Image} alt="" className='info__wrapper-image'/>
+                    <img data-aos="zoom-in" data-aos-duration="4000" src={Image} alt="" className='info__wrapper-image'/>
                     <div className='info__wrapper-text'>
+                        <div data-aos="zoom-in" data-aos-duration="4000">
                         <Tilda/>
-                        <p className='text'>Historically, drugs were discovered through
+                        </div>
+                        <p data-aos="zoom-in" data-aos-duration="4000" className='text'>Historically, drugs were discovered through
                             identifying the active ingredient from
                             traditional remedies or by serendipitous
                             discovery. Later chemical libraries of
                             synthetic small molecules.</p>
-                        <p className='author'>Mildred Payne</p>
-                        <p>Allergist</p>
+                        <p data-aos="zoom-in" data-aos-duration="4000" className='author'>Mildred Payne</p>
+                        <p data-aos="zoom-in" data-aos-duration="4000">Allergist</p>
                     </div>
                 </div>
                 <Faq/>

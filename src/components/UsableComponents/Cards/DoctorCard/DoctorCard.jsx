@@ -13,7 +13,7 @@ function DoctorCard({data}) {
 
     return (<NavLink to={`/doctors/${data.doctor_id}`} key={data.doctor_id} className='doctor__card'>
         <img src={data.image} alt="" className='image'/>
-        <div className='fullname'><span>{lang === 'uz' ? name_uz : name_ru}</span>
+        <div data-aos="zoom-in" data-aos-duration="4000" className='fullname'><span>{lang === 'uz' ? name_uz : name_ru}</span>
             <br/>{lang === 'uz' ? surname_uz : surname_ru} <br/> {lang === 'uz' ? lastname_uz : lastname_ru}</div>
     </NavLink>)
 }

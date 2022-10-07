@@ -15,7 +15,7 @@ function Carousel1() {
     const { t } = useTranslation();
 
     return (<header className='header'>
-        <Carousel showThumbs={false} stopOnHover={false} swipeable={true} animationHandler={'fade'} showStatus={false} showArrows={false}
+        <Carousel data-aos="fade-down" showThumbs={false} stopOnHover={false} swipeable={true} animationHandler={'fade'} showStatus={false} showArrows={false}
                   labels={false} axis={'vertical'} showIndicators={true} infiniteLoop={true} interval={5000}
                   autoPlay={true}>
             <>

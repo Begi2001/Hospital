@@ -1,8 +1,8 @@
 import React from 'react'
 import './Links.scss'
-import Hearth from "../../../../assets/icons/heart-pulse.svg";
-import Geo from "../../../../assets/icons/geo-alt.svg";
-import Mail from "../../../../assets/icons/envelope-open.svg";
+import Hearth from "../../../assets/icons/heart-pulse.svg";
+import Geo from "../../../assets/icons/geo-alt.svg";
+import Mail from "../../../assets/icons/envelope-open.svg";
 import {useTranslation} from "react-i18next";
 
 

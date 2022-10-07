@@ -1,10 +1,10 @@
 import React from 'react'
 import './Partners.scss'
 
-import Endo from "../../../../assets/icons/Partner1.svg";
-import Anamed from "../../../../assets/icons/Partner2.svg";
-import AR from "../../../../assets/icons/Partner3.svg";
-import DoctorCard from "../../Cards/DoctorCard/DoctorCard";
+import Endo from "../../../assets/icons/Partner1.svg";
+import Anamed from "../../../assets/icons/Partner2.svg";
+import AR from "../../../assets/icons/Partner3.svg";
+import DoctorCard from "../Cards/DoctorCard/DoctorCard";
 import {NavLink} from "react-router-dom";
 
 const data = [

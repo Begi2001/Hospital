@@ -7,7 +7,7 @@ import {ReactComponent as Clock} from "../../assets/icons/LightTime.svg";
 import {ReactComponent as User} from "../../assets/icons/user.svg";
 
 const data = [{
-    id: 1, title: 'Our Service', descr: 'Detail about our services', image: Photo
+    id: 1, title: 'Our Service', descr: 'Detail about our services', header_image: Photo
 }]
 
 const service = [{

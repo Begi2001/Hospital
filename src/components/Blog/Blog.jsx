@@ -8,7 +8,7 @@ import './Blog.scss'
 import SmallBlog from "../UsableComponents/Cards/SmallBlogCard/SmallBlog";
 
 const data = [{
-    id: 1, title: 'Our Blog', descr: 'Detail about our Blog', image: photo,
+    id: 1, title: 'Our Blog', descr: 'Detail about our Blog', header_image: photo,
 }]
 
 const top = [{

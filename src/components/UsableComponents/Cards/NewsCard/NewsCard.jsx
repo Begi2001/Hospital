@@ -7,7 +7,7 @@ import {NavLink} from "react-router-dom";
 
 function NewsCard({data}) {
     return (
-          <NavLink to={`/news/${data.id}`} key={data.id} className='newswrapper'>
+          <NavLink data-aos="zoom-in" data-aos-duration="4000" to={`/news/${data.id}`} key={data.id} className='newswrapper'>
               <img src={data.image} alt="" className='image'/>
               <div className='infos'>
                   <p className='info'>{data.time}</p>

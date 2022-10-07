@@ -8,7 +8,7 @@ import './News.scss'
 import SmallCard from "../UsableComponents/Cards/SmallNewsCard/SmallCard";
 
 const data = [{
-    id: 1, title: 'NEWS', descr: 'Detail about our News', image: photo,
+    id: 1, title: 'NEWS', descr: 'Detail about our News', header_image: photo,
 }]
 
 const news = {

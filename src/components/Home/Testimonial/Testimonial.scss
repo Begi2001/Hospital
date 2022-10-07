@@ -18,7 +18,7 @@
       justify-content: space-around;
       align-items: center;
       padding: 20px 45px;
-      row-gap: 20px;
+      row-gap: 35px;
       @media (max-width: 7685px) {
         width: 85%;
       }
@@ -52,6 +52,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: visible;
   }
 }
 
@@ -62,5 +63,5 @@
   }
 }
 .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
-  bottom: 0;
+  bottom: -3px;
 }

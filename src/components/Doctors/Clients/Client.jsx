@@ -15,7 +15,7 @@ const data = [{
 }]
 
 function Client() {
-    return (<section key={data[0].id} className='client'>
+    return (<section data-aos="zoom-in" data-aos-duration="4000" key={data[0].id} className='client'>
         <h1 className='client__title'>{data[0].title}</h1>
         <p className='client__subtitle'>{data[0].subtitle}</p>
         <p className='client__descr'>{data[0].descr}</p>

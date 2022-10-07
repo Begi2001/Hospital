@@ -23,15 +23,15 @@ function Service() {
     return (<Container>
         <section className='about__service'>
             {data.map(service => (<div key={service.id} className='about__service-wrapper'>
-                <div className='about__service-wrapper-Image rel'>
+                <div data-aos="zoom-in" data-aos-duration="4000" className='about__service-wrapper-Image rel'>
                     <img src={service.image} alt=""/>
                 </div>
                 <div className='about__Info'>
-                    <p className='about__Info-title'>{service.title}</p>
-                    <p className='about__Info-type'>{service.type}</p>
-                    <p className='about__Info-descr'>{service.descr}</p>
+                    <p data-aos="zoom-in" data-aos-duration="4000" className='about__Info-title'>{service.title}</p>
+                    <p data-aos="zoom-in" data-aos-duration="4000" className='about__Info-type'>{service.type}</p>
+                    <p data-aos="zoom-in" data-aos-duration="4000" className='about__Info-descr'>{service.descr}</p>
                     {service.services.map(serv => (
-                          <p key={serv.id} className='about__Info-service'><img src={Dot} alt=""/>{serv.title}
+                          <p data-aos="zoom-in" data-aos-duration="4000" key={serv.id} className='about__Info-service'><img src={Dot} alt=""/>{serv.title}
                           </p>))}
                 </div>
             </div>))}

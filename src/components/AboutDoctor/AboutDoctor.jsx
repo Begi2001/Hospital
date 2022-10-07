@@ -13,7 +13,6 @@ import {useGetDoctorQuery} from "../../redux";
 function AboutDoctor() {
     const id = useParams()
     const {data = [], isLoading, isError} = useGetDoctorQuery(id.id)
-    console.log(data);
     if (isError) return <div><h1>Error</h1></div>
     if (isLoading) return <div><h1>Loading...</h1></div>
 
@@ -28,22 +27,22 @@ function AboutDoctor() {
                 <>
                     <Founder data={doctor}/>
                     <div className='about__single-bio'>
-                        <h1 className='title'>Biography</h1>
-                        <p className='descr'>{doctor.biography_uz}</p>
+                        <h1 data-aos="zoom-in" data-aos-duration="4000" className='title'>Biography</h1>
+                        <p data-aos="zoom-in" data-aos-duration="4000" className='descr'>{doctor.biography_uz}</p>
                         <div className='infos'>
                             <div className='infos__edu'>
-                                <p className='infos__edu-title'>Education</p>
+                                <p data-aos="zoom-in" data-aos-duration="4000" className='infos__edu-title'>Education</p>
                                 {doctor.gethered_awards.map(aw => (
-                                    <div className='edu'>
+                                    <div data-aos="zoom-in" data-aos-duration="4000" className='edu'>
                                         <p className='edu__award'>{aw.title}</p>
                                         <hr className='divider'/>
                                     </div>
                                 ))}
                             </div>
                             <div className='infos__award'>
-                                <p className='infos__award-title'>Awards and honours</p>
+                                <p data-aos="zoom-in" data-aos-duration="4000" className='infos__award-title'>Awards and honours</p>
                                 {doctor.gethered_awards.map(aw => (
-                                    <div className='award'>
+                                    <div data-aos="zoom-in" data-aos-duration="4000" className='award'>
                                         <p className='edu__award'>{aw.title}</p>
                                         <hr className='divider'/>
                                     </div>
@@ -52,14 +51,14 @@ function AboutDoctor() {
                         </div>
                     </div>
                     <div className='about__single-operations'>
-                        <h1 className='title'>Operations Attented</h1>
+                        <h1 data-aos="zoom-in" data-aos-duration="4000" className='title'>Operations Attented</h1>
                         {doctor.attended_operations.map(operat => (<NavLink to={`/operation/${operat.id}`} className='operation__item'>
-                            <img src={operat.detail_image[0].detail_image} alt="" className='operation__item-image'/>
+                            <img data-aos="zoom-in" data-aos-duration="4000" src={operat.detail_image[0].detail_image} alt="" className='operation__item-image'/>
                             <div className='operation__item-info'>
-                                <p className='operation__date'>{operat.date}</p>
-                                <p className='operation__title'>{operat.title_ru}</p>
-                                <p className='operation__descr'>{operat.detail_description_ru}</p>
-                                <p className='operation__descr'>{operat.lastdescr}</p>
+                                <p data-aos="zoom-in" data-aos-duration="4000" className='operation__date'>{operat.date}</p>
+                                <p data-aos="zoom-in" data-aos-duration="4000" className='operation__title'>{operat.title_ru}</p>
+                                <p data-aos="zoom-in" data-aos-duration="4000" className='operation__descr'>{operat.detail_description_ru}</p>
+                                <p data-aos="zoom-in" data-aos-duration="4000" className='operation__descr'>{operat.lastdescr}</p>
                             </div>
                         </NavLink>))}
                     </div>

@@ -3,7 +3,7 @@ import './LearnMore.btn.scss'
 import {NavLink} from "react-router-dom";
 function LeanMore({children,url}) {
   return (
-    <NavLink to={url} className='learnmore' >
+    <NavLink data-aos="zoom-in" data-aos-duration="4000" to={url} className='learnmore' >
         {children}
     </NavLink>
   )

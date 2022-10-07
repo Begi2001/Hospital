@@ -25,10 +25,10 @@ function Service() {
                     <Title children={t('service')} url={'/services'}/>
                     <div className='services'>
                         {serv.our_service_departments.map(ser => (<div key={ser.department_id} className='item'>
-                            <img src={ser.image} alt=""/>
-                            <p className='title'>{ser.name_ru}</p>
-                            <p className='descr'>{ser.description_ru}</p>
-                            <NavLink className='link'
+                            <img data-aos="zoom-out" data-aos-duration="1000" src={ser.image} alt=""/>
+                            <p data-aos="zoom-out" data-aos-duration="1000" className='title'>{ser.name_ru}</p>
+                            <p data-aos="zoom-out" data-aos-duration="1000" className='descr'>{ser.description_ru}</p>
+                            <NavLink data-aos="zoom-out" data-aos-duration="1000" className='link'
                                      to={`/service/${ser.department_id}`}>{t('urltext')}<Arrow/></NavLink>
                         </div>))}
                     </div>

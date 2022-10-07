@@ -7,9 +7,8 @@ import './Operation.scss'
 
 function Operation() {
 
-
     const Ali = [{
-        id: 1, title: 'Our Blog', descr: 'Detail about our Blog', image: photo,
+        id: 1, title: 'Our Blog', descr: 'Detail about our Blog', header_image: photo,
     }]
 
     const operation = [{
@@ -28,14 +27,14 @@ function Operation() {
                 {operation.map(oper => (<>
                         <div className='operation'>
                             <div className='operation__info'>
-                                <h1 className='operation__info-title'>{oper.title}</h1>
-                                <p className='operation__info-descr'>{oper.descr}</p>
+                                <h1 data-aos="zoom-in" data-aos-duration="4000" className='operation__info-title'>{oper.title}</h1>
+                                <p data-aos="zoom-in" data-aos-duration="4000" className='operation__info-descr'>{oper.descr}</p>
                             </div>
-                            <img src={oper.image} alt="" className='operation__image'/>
+                            <img data-aos="zoom-in" data-aos-duration="4000" src={oper.image} alt="" className='operation__image'/>
                         </div>
-                        <img src={oper.video} alt="" className='operation__video'/>
-                        <p className='operation__actions'>Reasons and Actions taken</p>
-                        <p className='operation__text'>{oper.text}</p>
+                        <img data-aos="zoom-in" data-aos-duration="4000" src={oper.video} alt="" className='operation__video'/>
+                        <p data-aos="zoom-in" data-aos-duration="4000" className='operation__actions'>Reasons and Actions taken</p>
+                        <p data-aos="zoom-in" data-aos-duration="4000" className='operation__text'>{oper.text}</p>
                     </>
                 ))}
             </div>

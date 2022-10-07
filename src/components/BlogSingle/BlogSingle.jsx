@@ -9,7 +9,7 @@ import './BlogSingle.scss'
 
 function BlogSingle() {
     const data = [{
-        id: 1, title: 'Our Blog', descr: 'Detail about our Blog', image: photo,
+        id: 1, title: 'Our Blog', descr: 'Detail about our Blog', header_image: photo,
     }]
 
     const post = [{
