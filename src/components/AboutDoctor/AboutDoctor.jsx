@@ -8,11 +8,11 @@ import photo2 from '../../assets/images/sign 1.svg'
 import photo3 from '../../assets/images/Frame 250.png'
 import './AboutDoctor.scss'
 import {NavLink, useParams} from "react-router-dom";
-import {useGetDoctorQuery} from "../../redux";
+import {useGetSingleQuery} from "../../redux";
 
 function AboutDoctor() {
     const id = useParams()
-    const {data = [], isLoading, isError} = useGetDoctorQuery(id.id)
+    const {data = [], isLoading, isError} = useGetSingleQuery(`/doctors/single/${id.id}`)
     if (isError) return <div><h1>Error</h1></div>
     if (isLoading) return <div><h1>Loading...</h1></div>
 
@@ -52,8 +52,8 @@ function AboutDoctor() {
                     </div>
                     <div className='about__single-operations'>
                         <h1 data-aos="zoom-in" data-aos-duration="4000" className='title'>Operations Attented</h1>
-                        {doctor.attended_operations.map(operat => (<NavLink to={`/operation/${operat.id}`} className='operation__item'>
-                            <img data-aos="zoom-in" data-aos-duration="4000" src={operat.detail_image[0].detail_image} alt="" className='operation__item-image'/>
+                        {doctor.attended_operations.map(operat => (<NavLink to={`/operation/${operat.operation_id}`} className='operation__item'>
+                            <img data-aos="zoom-in" data-aos-duration="4000" src={operat.detail_image[1].detail_image} alt="" className='operation__item-image'/>
                             <div className='operation__item-info'>
                                 <p data-aos="zoom-in" data-aos-duration="4000" className='operation__date'>{operat.date}</p>
                                 <p data-aos="zoom-in" data-aos-duration="4000" className='operation__title'>{operat.title_ru}</p>

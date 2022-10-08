@@ -5,12 +5,14 @@ import Container from "../UsableComponents/Container/Container";
 import './Service.scss'
 import {ReactComponent as Clock} from "../../assets/icons/LightTime.svg";
 import {ReactComponent as User} from "../../assets/icons/user.svg";
+import {useGetSingleQuery} from "../../redux";
+import {useParams} from "react-router-dom";
 
-const data = [{
+const ali = [{
     id: 1, title: 'Our Service', descr: 'Detail about our services', header_image: Photo
 }]
 
-const service = [{
+const service = {
     id: 1,
     title: 'How is our service',
     descr: 'Professor Joshua Clark studied at Havard and qualified in medicine at Harvard Medical School in 1987. He then worked at various New York hospitals for the next five years, including Seattle, and Washington. He also held positions with the Medical Research Council, NY Heart Foundation and the Wellcome Trust.',
@@ -28,46 +30,50 @@ const service = [{
         text: 'Call : +1-2345-3455-33',
         url: 'tel:+12345345533'
     }],
-}]
+}
 
 function Service() {
+    const id = useParams()
+
+    const {data = [], isLoading, isError} = useGetSingleQuery(`/our-service/single/${id.id}`)
+
+    if (isError) return <div><h1>Error</h1></div>
+    if (isLoading) return <div><h1>Loading...</h1></div>
+
     return (<section className='service__single'>
-        {data.map(serv => (<SectionHeader data={serv}/>))}
+        {ali.map(serv => (<SectionHeader data={serv}/>))}
         <Container>
             <div className='service__single-wrapper'>
-                {service.map(serv => (<>
-                        <div key={serv.id} className='service__single-info'>
-                            <h1 className='service__title'>{serv.title}</h1>
-                            <p className='service__descr'>{serv.descr}</p>
-                            <hr className='divider'/>
-                            <p className='service__descr'>{serv.lastdescr}</p>
-                        </div>
-                        {serv.opening.map(open => (<div className='opening'>
-                                <p className='opening__title'><span><Clock/></span>{open.title}</p>
-                                <div className='opening__days'>
-                                    {open.days.map(day => (<div className='opening__times'>
-                                            <p className='opening__times-days'>{day.days}</p>
-                                            <p className='opening__times-time'>{day.time}</p>
-                                        </div>))}
-                                </div>
-                                <p className='opening__descr'>{open.descr}</p>
-                            </div>))}
-                    </>))}
+                <div key={data.data[0].department_id} className='service__single-info'>
+                    <h1 className='service__title'>{data.data[0].name_uz}</h1>
+                    <p className='service__descr'>{data.data[0].description_ru}</p>
+                    <hr className='divider'/>
+                    <p className='service__descr'>{data.data[0].description_ru}</p>
+                </div>
+                <div className='opening'>
+                    <p className='opening__title'><span><Clock/></span>{service.opening[0].title}</p>
+                    <div className='opening__days'>
+                        {service.opening[0].days.map(day => (<div className='opening__times'>
+                            <p className='opening__times-days'>{day.days}</p>
+                            <p className='opening__times-time'>{day.time}</p>
+                        </div>))}
+                    </div>
+                    <p className='opening__descr'>{service.opening[0].descr}</p>
+                </div>
             </div>
+
             <div className='service__single-item'>
-                {service.map(serv => (<>
-                        <div key={serv.id} className='service__single-info'>
-                            <h1 className='service__title'>{serv.title}</h1>
-                            <p className='service__descr'>{serv.descr}</p>
-                            <hr className='divider'/>
-                            <p className='service__descr'>{serv.lastdescr}</p>
-                        </div>
-                        {serv.emergency.map(emer => (<div className='opening'>
-                                <p className='opening__title'><span><Clock/></span>{emer.title}</p>
-                                <p className='opening__descr emer__descr'>{emer.descr}</p>
-                                <a href={emer.url}><p className='emer__text'>{emer.text}</p></a>
-                            </div>))}
-                    </>))}
+                <div key={data.data[0].department_id} className='service__single-info'>
+                    <h1 className='service__title'>{data.data[0].name_uz}</h1>
+                    <p className='service__descr'>{data.data[0].description_ru}</p>
+                    <hr className='divider'/>
+                    <p className='service__descr'>{data.data[0].description_ru}</p>
+                </div>
+                <div className='opening'>
+                    <p className='opening__title'><span><User/></span>{service.emergency[0].title}</p>
+                    <p className='opening__descr emer__descr'>{service.emergency[0].descr}</p>
+                    <a href={service.emergency[0].url}><p className='emer__text'>{service.emergency[0].text}</p></a>
+                </div>
             </div>
         </Container>
     </section>)

@@ -15,52 +15,37 @@ import {useTranslation} from "react-i18next";
 const data = [{
     id: 1,
     image: Top,
-    title: 'A passion for putting patients first',
-    descr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat scelerisque tortor ornare ornare. Quisque placerat scelerisque tortor ornare ornare Convallis felis vitae tortor augue. Velit nascetur proin massa in. Consequat faucibus porttitor enim et....',
+    title_ru: 'A passion for putting patients first',
+    description_ru: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat scelerisque tortor ornare ornare. Quisque placerat scelerisque tortor ornare ornare Convallis felis vitae tortor augue. Velit nascetur proin massa in. Consequat faucibus porttitor enim et....',
     time: 'Monday 05, September 2021',
-    author: 'By Author',
-    views: '68',
-    likes: '86',
     top: true
 }, {
     id: 2,
     image: news1,
-    title: 'This Article’s Title goes Here, \n' + 'but not too long.',
-    descr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat scelerisque tortor ornare ornare. Quisque placerat scelerisque tortor ornare ornare Convallis felis vitae tortor augue. Velit nascetur proin massa in. Consequat faucibus porttitor enim et....',
+    title_ru: 'This Article’s Title goes Here, \n' + 'but not too long.',
+    description_ru: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat scelerisque tortor ornare ornare. Quisque placerat scelerisque tortor ornare ornare Convallis felis vitae tortor augue. Velit nascetur proin massa in. Consequat faucibus porttitor enim et....',
     time: 'Monday 05, September 2021',
-    author: 'By Author',
-    views: '68',
-    likes: '86',
     top: false
 }, {
     id: 3,
     image: news2,
-    title: 'This Article’s Title goes Here, \n' + 'but not too long.',
-    descr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat scelerisque tortor ornare ornare. Quisque placerat scelerisque tortor ornare ornare Convallis felis vitae tortor augue. Velit nascetur proin massa in. Consequat faucibus porttitor enim et....',
+    title_ru: 'This Article’s Title goes Here, \n' + 'but not too long.',
+    description_ru: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat scelerisque tortor ornare ornare. Quisque placerat scelerisque tortor ornare ornare Convallis felis vitae tortor augue. Velit nascetur proin massa in. Consequat faucibus porttitor enim et....',
     time: 'Monday 05, September 2021',
-    author: 'By Author',
-    views: '68',
-    likes: '86',
     top: false
 }, {
     id: 4,
     image: news3,
-    title: 'This Article’s Title goes Here, \n' + 'but not too long.',
-    descr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat scelerisque tortor ornare ornare. Quisque placerat scelerisque tortor ornare ornare Convallis felis vitae tortor augue. Velit nascetur proin massa in. Consequat faucibus porttitor enim et....',
+    title_ru: 'This Article’s Title goes Here, \n' + 'but not too long.',
+    description_ru: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat scelerisque tortor ornare ornare. Quisque placerat scelerisque tortor ornare ornare Convallis felis vitae tortor augue. Velit nascetur proin massa in. Consequat faucibus porttitor enim et....',
     time: 'Monday 05, September 2021',
-    author: 'By Author',
-    views: '68',
-    likes: '86',
     top: false
 }, {
     id: 5,
     image: news4,
-    title: 'This Article’s Title goes Here, \n' + 'but not too long.',
-    descr: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat scelerisque tortor ornare ornare. Quisque placerat scelerisque tortor ornare ornare Convallis felis vitae tortor augue. Velit nascetur proin massa in. Consequat faucibus porttitor enim et....',
+    title_ru: 'This Article’s Title goes Here, \n' + 'but not too long.',
+    description_ru: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat scelerisque tortor ornare ornare. Quisque placerat scelerisque tortor ornare ornare Convallis felis vitae tortor augue. Velit nascetur proin massa in. Consequat faucibus porttitor enim et....',
     time: 'Monday 05, September 2021',
-    author: 'By Author',
-    views: '68',
-    likes: '86',
     top: false
 }];
 

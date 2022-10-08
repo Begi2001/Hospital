@@ -10,49 +10,28 @@ import {ReactComponent as ExitLight} from "../../../assets/icons/ExitLight.svg";
 import Container from "../Container/Container";
 import AppoinmentBtn from "../Buttons/Appoinment/Appoinment";
 import {useTranslation} from "react-i18next";
+import AppoinmentSidebar from "../Sidebars/Appoinment/Appoinment.sidebar";
 
 
 function Navbar() {
 
     const {t} = useTranslation();
 
-    const data = [
-        {
-            id: 1,
-            title: `${t('home')}`,
-            url: '/'
-        },
-        {
-            id: 2,
-            title: `${t('about')}`,
-            url: '/about'
-        },
-        {
-            id: 3,
-            title: `${t('service')}`,
-            url: '/services'
-        },
-        {
-            id: 4,
-            title: `${t('doctors')}`,
-            url: '/doctors'
-        },
-        {
-            id: 5,
-            title: `${t('news')}`,
-            url: '/news'
-        },
-        {
-            id: 6,
-            title: `${t('blog')}`,
-            url: '/blog'
-        },
-        {
-            id: 7,
-            title: `${t('contact')}`,
-            url: '/contact'
-        },
-    ];
+    const data = [{
+        id: 1, title: `${t('home')}`, url: '/'
+    }, {
+        id: 2, title: `${t('about')}`, url: '/about'
+    }, {
+        id: 3, title: `${t('service')}`, url: '/services'
+    }, {
+        id: 4, title: `${t('doctors')}`, url: '/doctors'
+    }, {
+        id: 5, title: `${t('news')}`, url: '/news'
+    }, {
+        id: 6, title: `${t('blog')}`, url: '/blog'
+    }, {
+        id: 7, title: `${t('contact')}`, url: '/contact'
+    },];
 
     const [ID, setID] = useState(1);
     const [open, setOpen] = useState(false);
@@ -60,8 +39,7 @@ function Navbar() {
     const [sticky, setSticky] = useState(false);
 
     const Ali = () => {
-        sessionStorage.setItem('appoinment', 'true')
-        setOrder(true)
+        localStorage.setItem('appmnt', true)
     }
 
 
@@ -103,7 +81,7 @@ function Navbar() {
                         <p id={menu.id} onClick={e => {
                             setID(e.target.id);
                             setOpen(false)
-                        }} className='title' style={{
+                        }} className='title' className='section__header-titles' style={{
                             color: ID == menu.id ? '#3585F9' : '#000', fontWeight: ID == menu.id ? '600' : '400'
                         }}>{menu.title}</p>
                     </NavLink>))}
@@ -111,44 +89,7 @@ function Navbar() {
                 </div>
             </div>
         </Container>
-        <div className='order' style={{
-            top: order !== true ? '-200%' : '0'
-        }}>
-            <div className='exitBtn' style={{
-                display: order !== true ? 'none' : 'block'
-            }} onClick={() => setOrder(false)}>
-                <ExitLight/>
-            </div>
-            <div className='order__text'>
-                <h1 className='order__text-title'>Sign up for an appointment</h1>
-                <p className='order__text-descr'>It just takes a few minutes to sign up and get fast,
-                    easy access to care, 24/7. No need for your
-                    insurance card yet</p>
-            </div>
-            <form className='order__form'>
-                <select className='input'>
-                    <option value="">Choose a department</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <select className='input'>
-                    <option value="">Choose a doctor</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <input className='input' placeholder='Your Name' type="text"/>
-                <input className='input' placeholder='Your Email' type="text"/>
-                <input className='input' placeholder='Phone' type="text"/>
-                <input className='input' placeholder='02/02/2022' type="date"/>
-                <button className='input submit' type="submit">make an appointment</button>
-            </form>
-        </div>
+        <AppoinmentSidebar isActive={order}/>
     </nav>)
 }
 
