@@ -89,7 +89,9 @@ function Navbar() {
                 </div>
             </div>
         </Container>
+{/*
         <AppoinmentSidebar isActive={order}/>
+*/}
     </nav>)
 }
 
