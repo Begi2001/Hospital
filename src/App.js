@@ -22,10 +22,10 @@ import Popup from "./components/UsableComponents/Popup/Popup";
 function App() {
     return (<>
               <TopNavbar/>
-              <Navbar/>
+              {/* <Navbar/> */}
               <Popup/>
               <Routes>
-                  <Route path='/' element={<Home/>}/>
+                  <Route path='/' exact element={<Home/>}/>
                   <Route path='/about' element={<About/>}/>
                   <Route path='/doctors/:id' element={<AboutDoctor/>}/>
                   <Route path='/operation/:id' element={<Operation/>}/>
