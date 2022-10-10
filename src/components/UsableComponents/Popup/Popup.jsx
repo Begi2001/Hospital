@@ -11,7 +11,7 @@ function Popup() {
         }, 5000)
     }, []);*/
 
-    return (<div className='modal' style={{display:open !== false ? 'flex' : 'none'}}>
+    return (<div className='modal' style={{display: open !== false ? 'flex' : 'none'}}>
         <div className='modal__logo'>
             <Logo/>
         </div>
@@ -23,7 +23,7 @@ function Popup() {
         <label className='modal__label' htmlFor="name">Your Number <span>*</span> </label>
         <input type="tel" className='modal__input' placeholder='+998 99 888-77-66'/>
         <div className='modal__btns'>
-            <button className='btn reject'>Rejection</button>
+            <button className='btn reject' onClick={()=>setOpen(false)}>Rejection</button>
             <button className='btn dispatch'>Dispatch</button>
         </div>
     </div>)

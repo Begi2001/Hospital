@@ -3,9 +3,6 @@ import SectionHeaders from "../UsableComponents/SectionHeaders/SectionHeader";
 import Photo from "../../assets/images/docsHeader.png";
 import Container from "../UsableComponents/Container/Container";
 import Founder from "../About/Founder/Founder";
-import photo from '../../assets/images/founder.png'
-import photo2 from '../../assets/images/sign 1.svg'
-import photo3 from '../../assets/images/Frame 250.png'
 import './AboutDoctor.scss'
 import {NavLink, useParams} from "react-router-dom";
 import {useGetSingleQuery} from "../../redux";

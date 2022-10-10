@@ -6,7 +6,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     column-gap: 10px;
     @media (max-width: 1200px) {

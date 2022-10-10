@@ -6,6 +6,7 @@ import Container from "../UsableComponents/Container/Container";
 import BigBlog from "../UsableComponents/Cards/BigBlogCard/BigBlogCard";
 import './Blog.scss'
 import SmallBlog from "../UsableComponents/Cards/SmallBlogCard/SmallBlog";
+import {useGetDataQuery} from "../../redux";
 
 const data = [{
     id: 1, title: 'Our Blog', descr: 'Detail about our Blog', header_image: photo,
@@ -32,16 +33,30 @@ const posts = [{
 },]
 
 function Blog() {
+    const {data = [], isLoading, isError} = useGetDataQuery('blogs')
+
+    if (isLoading) return <div>Loading</div>
+    if (isError) return <div>Error</div>
+
+    console.log(data.result);
     return (<div className='blog'>
-        {data.map(type => (<SectionHeaders data={type}/>))}
-        <Container>
-            <div className='blog__top'>
-                {top.map(blog => (<BigBlog data={blog}/>))}
-            </div>
-            <div className='blog__posts'>
-                {posts.map(post => (<SmallBlog data={post}/>))}
-            </div>
-        </Container>
+        {data.result.map(item => (
+            <>
+                <SectionHeaders data={item}/>
+                <Container>
+                    <div className='blog__top'>
+                        {item.blog_infos.slice(0, 2).map(post => (
+                            <BigBlog data={post}/>
+                        ))}
+                    </div>
+                    <div className='blog__posts'>
+                        {item.blog_infos.slice(2, 10).map(post => (
+                            <SmallBlog data={post}/>
+                        ))}
+                    </div>
+                </Container>
+            </>
+        ))}
     </div>)
 }
 

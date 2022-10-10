@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import './Carousel.scss'
 import Photo1 from '../../../assets/images/home.png'
 import Photo2 from '../../../assets/images/aboutImg.png'

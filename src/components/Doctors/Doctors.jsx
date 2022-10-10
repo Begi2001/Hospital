@@ -11,6 +11,7 @@ import DoctorCard from "../UsableComponents/Cards/DoctorCard/DoctorCard";
 function Doctors() {
     const {data = [],isLoading,isError} = useGetDataQuery('doctors')
 
+    console.log(data.result);
     if (isError) return <div> <h1>Error</h1> </div>
     if (isLoading) return <div> <h1>Loading...</h1> </div>
 

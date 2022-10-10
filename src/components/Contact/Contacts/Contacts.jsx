@@ -39,7 +39,7 @@ function Contacts() {
         <div className='contacts__map'>
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48680.23345172929!2d71.94179871021267!3d40.30873562090864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bb88011f35f031%3A0x1413c37dfde492d!2sQuvasoy%2C%20O%60zbekiston!5e0!3m2!1suz!2s!4v1663712947236!5m2!1suz!2s"
-                style={{border: 0, borderRadius: '10px', width: '100%', height: '768px',}} allowFullScreen=""
+                style={{backgroundColor:'#3585F9',border: '0', borderRadius: '10px', width: '100%', height: '768px',}} allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"></iframe>
         </div>

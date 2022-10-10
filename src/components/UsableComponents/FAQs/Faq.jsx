@@ -103,7 +103,6 @@ const Faq = () => {
                   <div className="firstacc">
                       {faq.map((acc) => (
                             <Accordion
-                                data-aos="zoom-in" data-aos-duration="4000"
                                   sx={{width: "100%", boxShadow: "none"}}
                                   key={acc.id}
                                   expanded={expanded === `panel${acc.id}`}
@@ -126,7 +125,6 @@ const Faq = () => {
                   <div className="secondacc">
                       {faq2.map((acc) => (
                             <Accordion
-                                data-aos="zoom-in" data-aos-duration="4000"
                                   sx={{width: "100%", boxShadow: "none"}}
                                   key={acc.id}
                                   expanded={expanded2 === `panel${acc.id}`}

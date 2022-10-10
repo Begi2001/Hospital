@@ -31,8 +31,10 @@ function Service() {
                     <p data-aos="zoom-in" data-aos-duration="4000" className='about__Info-type'>{service.type}</p>
                     <p data-aos="zoom-in" data-aos-duration="4000" className='about__Info-descr'>{service.descr}</p>
                     {service.services.map(serv => (
-                          <p data-aos="zoom-in" data-aos-duration="4000" key={serv.id} className='about__Info-service'><img src={Dot} alt=""/>{serv.title}
-                          </p>))}
+                        <p data-aos="zoom-in" data-aos-duration="4000" key={serv.id} className='about__Info-service'>
+                            <img src={Dot} alt=""/>{serv.title}
+                        </p>
+                    ))}
                 </div>
             </div>))}
         </section>

@@ -64,10 +64,8 @@ function Navbar() {
                     <img src={LogoText} alt="" className='text'/>
                 </NavLink>
                 <div className='menu'>
-                    {data.map(menu => (<NavLink key={menu.id} to={menu.url}>
-                        <p id={menu.id} onClick={e => setID(e.target.id)} className='title' style={{
-                            color: ID == menu.id ? '#3585F9' : '#000', fontWeight: ID == menu.id ? '600' : '400'
-                        }}>{menu.title}</p>
+                    {data.map(menu => (<NavLink activeclassname='selected' className='title' to={`${menu.url}`}>
+                        {`${menu.title}`}
                     </NavLink>))}
                 </div>
                 <div className='btn'>

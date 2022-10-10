@@ -21,25 +21,25 @@ import Popup from "./components/UsableComponents/Popup/Popup";
 
 function App() {
     return (<>
-              <TopNavbar/>
-              {/* <Navbar/> */}
-              <Popup/>
-              <Routes>
-                  <Route path='/' exact element={<Home/>}/>
-                  <Route path='/about' element={<About/>}/>
-                  <Route path='/doctors/:id' element={<AboutDoctor/>}/>
-                  <Route path='/operation/:id' element={<Operation/>}/>
-                  <Route path='/news' element={<News/>}/>
-                  <Route path='/news/:id' element={<NewsSingle/>}/>
-                  <Route path='/blog' element={<Blog/>}/>
-                  <Route path='/blog/:id' element={<BlogSingle/>}/>
-                  <Route path='/contact' element={<Contact/>}/>
-                  <Route path='/doctors' element={<Doctors/>}/>
-                  <Route path='/service/:id' element={<Service/>}/>
-                  <Route path='/services' element={<Services/>}/>
-              </Routes>
-              {/*<Footer/>*/}
-          </>
+            <TopNavbar/>
+            <Navbar/>
+            <Popup/>
+            <Routes>
+                <Route path='/' exact element={<Home/>}/>
+                <Route path='/about' element={<About/>}/>
+                <Route path='/doctors/:id' element={<AboutDoctor/>}/>
+                <Route path='/operation/:id' element={<Operation/>}/>
+                <Route path='/news' element={<News/>}/>
+                <Route path='/news/:id' element={<NewsSingle/>}/>
+                <Route path='/blog' element={<Blog/>}/>
+                <Route path='/blog/:id' element={<BlogSingle/>}/>
+                <Route path='/contact' element={<Contact/>}/>
+                <Route path='/doctors' element={<Doctors/>}/>
+                <Route path='/service/:id' element={<Service/>}/>
+                <Route path='/services' element={<Services/>}/>
+            </Routes>
+            <Footer/>
+        </>
     );
 }
 
