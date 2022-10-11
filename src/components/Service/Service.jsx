@@ -7,10 +7,8 @@ import {ReactComponent as Clock} from "../../assets/icons/LightTime.svg";
 import {ReactComponent as User} from "../../assets/icons/user.svg";
 import {useGetSingleQuery} from "../../redux";
 import {useParams} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
-const ali = [{
-    id: 1, title: 'Our Service', descr: 'Detail about our services', header_image: Photo
-}]
 
 const service = {
     id: 1,
@@ -34,11 +32,21 @@ const service = {
 
 function Service() {
     const id = useParams()
+    const {t} = useTranslation()
 
     const {data = [], isLoading, isError} = useGetSingleQuery(`/our-service/single/${id.id}`)
 
     if (isError) return <div><h1>Error</h1></div>
     if (isLoading) return <div><h1>Loading...</h1></div>
+
+    const ali = [{
+        id: 1,
+        header_title_uz: `${data.data[0].name_uz}`,
+        header_title_ru: `${data.data[0].name_ru}`,
+        header_description_uz: null,
+        header_description_ru: null,
+        header_image: Photo
+    }]
 
     return (<section className='service__single'>
         {ali.map(serv => (<SectionHeader data={serv}/>))}
@@ -48,7 +56,7 @@ function Service() {
                     <h1 className='service__title'>{data.data[0].name_uz}</h1>
                     <p className='service__descr'>{data.data[0].description_ru}</p>
                     <hr className='divider'/>
-                    <p className='service__descr'>{data.data[0].description_ru}</p>
+                    <p className='service__descr'>{data.data[0].full_description_uz}</p>
                 </div>
                 <div className='opening'>
                     <p className='opening__title'><span><Clock/></span>{service.opening[0].title}</p>
@@ -67,7 +75,7 @@ function Service() {
                     <h1 className='service__title'>{data.data[0].name_uz}</h1>
                     <p className='service__descr'>{data.data[0].description_ru}</p>
                     <hr className='divider'/>
-                    <p className='service__descr'>{data.data[0].description_ru}</p>
+                    <p className='service__descr'>{data.data[0].full_description_uz}</p>
                 </div>
                 <div className='opening'>
                     <p className='opening__title'><span><User/></span>{service.emergency[0].title}</p>

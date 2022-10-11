@@ -11,8 +11,10 @@ import DoctorCard from "../UsableComponents/Cards/DoctorCard/DoctorCard";
 function Operation() {
     const id = useParams()
     const {data = [], isLoading, isError} = useGetSingleQuery(`/operations/single/${id.id}`)
+    console.log(data);
     if (isError) return <div><h1>Error</h1></div>
     if (isLoading) return <div><h1>Loading...</h1></div>
+
     return (<section className='operation__wrapper'>
         {data.data.map(operation => (<>
             <SectionHeaders data={operation}/>

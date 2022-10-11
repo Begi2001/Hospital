@@ -38,7 +38,7 @@ function App() {
                 <Route path='/service/:id' element={<Service/>}/>
                 <Route path='/services' element={<Services/>}/>
             </Routes>
-            <Footer/>
+            {/*<Footer/>*/}
         </>
     );
 }

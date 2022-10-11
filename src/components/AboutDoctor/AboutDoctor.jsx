@@ -10,11 +10,16 @@ import {useGetSingleQuery} from "../../redux";
 function AboutDoctor() {
     const id = useParams()
     const {data = [], isLoading, isError} = useGetSingleQuery(`/doctors/single/${id.id}`)
+
     if (isError) return <div><h1>Error</h1></div>
     if (isLoading) return <div><h1>Loading...</h1></div>
-
     const ali = [{
-        id: 1, title: 'Our Doctors', descr: 'Detail about our Doctors', header_image: Photo,
+        id: 1,
+        header_title_uz: `${data.data[0].full_name_uz}`,
+        header_title_ru: `${data.data[0].full_name_ru}`,
+        header_description_uz: null,
+        header_description_ru: null,
+        header_image: Photo,
     }]
 
     return (<section className='about__single'>

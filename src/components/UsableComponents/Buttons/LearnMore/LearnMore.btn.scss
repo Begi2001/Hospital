@@ -11,6 +11,10 @@
   font-weight: 500;
   letter-spacing: 1px;
   cursor: pointer;
+  @media (max-width: 425px) {
+    padding: 8px 14px;
+
+  }
   &:active{
     background-image: linear-gradient(to bottom, $darkblue 10%, $lightblue 80%)
   }

@@ -1,36 +1,10 @@
 import React from 'react'
 import SectionHeaders from "../UsableComponents/SectionHeaders/SectionHeader";
-import blog from '../../assets/images/topblog.png'
-import photo from '../../assets/images/blogHeader.png'
 import Container from "../UsableComponents/Container/Container";
 import BigBlog from "../UsableComponents/Cards/BigBlogCard/BigBlogCard";
 import './Blog.scss'
 import SmallBlog from "../UsableComponents/Cards/SmallBlogCard/SmallBlog";
 import {useGetDataQuery} from "../../redux";
-
-const data = [{
-    id: 1, title: 'Our Blog', descr: 'Detail about our Blog', header_image: photo,
-}]
-
-const top = [{
-    id: 1, image: blog, type: 'Design', title: 'Digital marketing channels', time: ' 23 Nov. 2021',
-}, {
-    id: 1, image: blog, type: 'Design', title: 'Digital marketing channels', time: ' 23 Nov. 2021',
-}]
-
-const posts = [{
-    id: 1, image: blog, type: 'Design', title: 'Digital marketing channels', time: ' 23 Nov. 2021',
-}, {
-    id: 1, image: blog, type: 'Design', title: 'Digital marketing channels', time: ' 23 Nov. 2021',
-}, {
-    id: 1, image: blog, type: 'Design', title: 'Digital marketing channels', time: ' 23 Nov. 2021',
-}, {
-    id: 1, image: blog, type: 'Design', title: 'Digital marketing channels', time: ' 23 Nov. 2021',
-}, {
-    id: 1, image: blog, type: 'Design', title: 'Digital marketing channels', time: ' 23 Nov. 2021',
-}, {
-    id: 1, image: blog, type: 'Design', title: 'Digital marketing channels', time: ' 23 Nov. 2021',
-},]
 
 function Blog() {
     const {data = [], isLoading, isError} = useGetDataQuery('blogs')

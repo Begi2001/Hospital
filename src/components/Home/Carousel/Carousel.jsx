@@ -9,18 +9,32 @@ import Container from "../../UsableComponents/Container/Container";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {Carousel} from 'react-responsive-carousel';
 import {useTranslation} from "react-i18next";
+import {NavLink} from "react-router-dom";
 
 function Carousel1() {
 
-    const { t } = useTranslation();
+    const {t} = useTranslation();
 
     return (<header className='header'>
-        <Carousel data-aos="fade-down" showThumbs={false} stopOnHover={false} swipeable={true} animationHandler={'fade'} showStatus={false} showArrows={false}
-                  labels={false} axis={'vertical'} showIndicators={true} infiniteLoop={true} interval={5000}
-                  autoPlay={true}>
-            <>
-                <img src={Photo1} alt="" className='image'/>
-                <Container>
+        <Carousel animationHandler={"fade"} swipeable={true} showArrows={false} showStatus={false} showThumbs={false}
+                  autoPlay
+                  infiniteLoop={true}>
+            <div className='carousel'>
+                <div style={{width:'100vw',background: `url(${Photo1}) top center/cover no-repeat`}}>
+                    <Container>
+                        <div className='main'>
+                            <p className='subtitle'>{t("care1")}</p>
+                            <p className='title'>{t('carouseltitle1')}<br/> {t('carouseldescr1')}</p>
+                            <div className='wrapper'>
+                                <LearnMoreBtn url={'/service'} children={t('service')}/>
+                                <hr/>
+                            </div>
+                        </div>
+                    </Container>
+                </div>
+            </div>
+            <div className='carousel'>
+                <div style={{width:'100vw',background: `url(${Photo2}) top center/cover no-repeat`}}><Container>
                     <div className='main'>
                         <p className='subtitle'>{t("care1")}</p>
                         <p className='title'>{t('carouseltitle1')}<br/> {t('carouseldescr1')}</p>
@@ -29,47 +43,32 @@ function Carousel1() {
                             <hr/>
                         </div>
                     </div>
-                </Container>
-            </>
-            <>
-                <img src={Photo2} alt="" className='image'/>
-                <Container>
+                </Container></div>
+            </div>
+            <div className='carousel'>
+                <div style={{width:'100vw',background: `url(${Photo3}) top center/cover no-repeat`}}><Container>
                     <div className='main'>
-                        <p className='subtitle'>{t('care2')}</p>
-                        <p className='title'>{t('carouseltitle2')}<br/>{t('carouseldescr2')}</p>
+                        <p className='subtitle'>{t("care1")}</p>
+                        <p className='title'>{t('carouseltitle1')}<br/> {t('carouseldescr1')}</p>
                         <div className='wrapper'>
-                            <LearnMoreBtn url={'/service'} children={'Our Service'}/>
+                            <LearnMoreBtn url={'/service'} children={t('service')}/>
                             <hr/>
                         </div>
                     </div>
-                </Container>
-            </>
-            <>
-                <img src={Photo3} alt="" className='image'/>
-                <Container>
+                </Container></div>
+            </div>
+            <div className='carousel'>
+                <div style={{width:'100vw',background: `url(${Photo4}) top center/cover no-repeat`}}><Container>
                     <div className='main'>
-                        <p className='subtitle'>{t('care3')}</p>
-                        <p className='title'>{t('carouseltitle3')}<br/> {t('carouseldescr3')}</p>
+                        <p className='subtitle'>{t("care1")}</p>
+                        <p className='title'>{t('carouseltitle1')}<br/> {t('carouseldescr1')}</p>
                         <div className='wrapper'>
-                            <LearnMoreBtn url={'/service'} children={'Our Service'}/>
+                            <LearnMoreBtn url={'/service'} children={t('service')}/>
                             <hr/>
                         </div>
                     </div>
-                </Container>
-            </>
-            <>
-                <img src={Photo4} alt="" className='image'/>
-                <Container>
-                    <div className='main'>
-                        <p className='subtitle'>{t('care4')}</p>
-                        <p className='title'>{t('carouseltitle4')}<br/> {t('carouseldescr4')}</p>
-                        <div className='wrapper'>
-                            <LearnMoreBtn url={'/service'} children={'Our Service'}/>
-                            <hr/>
-                        </div>
-                    </div>
-                </Container>
-            </>
+                </Container></div>
+            </div>
         </Carousel>
     </header>)
 }

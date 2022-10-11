@@ -1,7 +1,18 @@
 @import '../../../assets/variables/colors';
 
+.succesOpen{
+  position: fixed !important; 
+  top: 13% !important;
+  right: 0 !important; 
+  z-index: 1000 !important;
+  width: 300px;
+  display: block !important;
+}
+.succesClose{
+  display: none !important;
+}
 .modal {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -43,7 +54,7 @@
   &__descr {
     color: $dark;
     line-height: 19px;
-    margin-bottom: 15px;
+    margin-bottom: 35px;
   }
 
   &__input {
@@ -54,6 +65,14 @@
     margin-bottom: 15px;
   }
 
+  &__danger{
+    width: 100%;
+    padding: 12px 10px;
+    border-radius: 5px;
+    border: 1.3px solid darkred;
+    margin-bottom: 15px;
+  }
+  
   &__btns {
     width: 100%;
     display: flex;

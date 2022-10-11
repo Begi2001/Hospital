@@ -14,6 +14,10 @@
   "news": "yangiliklar",
   "blog": "xabarlar",
   "contact": "aloqa",
+
+  "contact_description": "Bizni shu manzil va raqamlardan topa olasiz",
+
+
   "appoinment": "Qabulga yozilish",
   "Carousel": "carousel",
   "care1": "Med Art",
@@ -42,5 +46,14 @@
   "linktitle2": "Qabulga yozilish",
   "linkdescr2": "Xabar yuboring",
   "linktitle3": "Tez yordam",
-  "linkdescr3": "Bizga elektron pochta xabarini yuboring"
+  "linkdescr3": "Bizga elektron pochta xabarini yuboring",
+  "popupHeader" : "Bepul maslahat olish uchun ismingiz va raqamingizni qoldiring, mas'ul shaxslar 3 daqiqada siz bilan bog'lanadi.",
+  "contactus" : "Biz bilan bog'lanish",
+  "yourname" : "Ismingiz",
+  "yourphone": "Telefon Raqaminigiz",
+  "dispatch" : "Jo'natish",
+  "reject": "Bekor Qilish",
+  "enteryourname": "Ismingizni kiriting.",
+  "dispached": "Yuborildi",
+  "success": "Sizning arizangiz qabul qilindi"
 }

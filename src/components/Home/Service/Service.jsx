@@ -26,7 +26,7 @@ function Service() {
                     <div className='services'>
                         {serv.our_service_departments.slice(0, 6).map(ser => (
                             <div key={ser.department_id} className='item'>
-                                <img data-aos="zoom-out" data-aos-duration="1000" src={ser.image} alt=""/>
+                                <img data-aos="zoom-out" data-aos-duration="1000" src={ser.icon} alt=""/>
                                 <p data-aos="zoom-out" data-aos-duration="1000" className='title'>{ser.name_ru}</p>
                                 <p data-aos="zoom-out" data-aos-duration="1000"
                                    className='descr'>{ser.description_ru}</p>

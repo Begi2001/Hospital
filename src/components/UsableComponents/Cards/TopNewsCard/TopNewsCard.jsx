@@ -18,7 +18,7 @@ function TopNewsCard({data}) {
             <div data-aos="zoom-in" data-aos-duration="4000" className='info'><Views/>64</div>
         </div>
         <p data-aos="zoom-in" data-aos-duration="4000" className='title'>{data.title_ru}</p>
-        <p data-aos="zoom-in" data-aos-duration="4000" className='descr'>{data.description_ru}</p>
+        <p data-aos="zoom-in" data-aos-duration="4000" className='descr'>{data.full_description_ru}</p>
         <ReadMore children={t('urltext')} url={`./news/${data.news_id}`}/>
     </div>)
 }

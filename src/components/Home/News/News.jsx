@@ -19,10 +19,10 @@ function News() {
             {data.result.map(info => (<>
                 <Title url={'/news'} children={t('news')}/>
                 <div className='wrapper'>
-                    {info.news_infos.filter(item => item.popularity === '1').slice(0, 1).map(single => <TopNewsCard
+                    {info.news_infos.filter(item => item.popularity === 'Ha').slice(0, 1).map(single => <TopNewsCard
                         data={single}/>)}
                     <div className='morenews'>
-                        {info.news_infos.filter(item => (item.popularity === '0')).slice(0, 4).map(single => <NewsCard
+                        {info.news_infos.filter(item => (item.popularity === 'Yo`q')).slice(0, 4).map(single => <NewsCard
                             key={single.id} data={single}/>)}
                     </div>
                 </div>

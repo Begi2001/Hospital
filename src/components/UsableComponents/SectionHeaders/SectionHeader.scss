@@ -20,6 +20,7 @@
     color: $light;
 
     .section__name {
+      text-transform: capitalize;
       font-weight: 600;
       font-size: calc(20px + 24 * (100vw / 1240));
       margin-bottom: 10px;
