@@ -2,7 +2,6 @@ import React from 'react'
 import './SectionHeader.scss'
 
 function SectionHeaders({data}) {
-    console.log(data);
     const lang = localStorage.getItem('i18nextLng')
 
     return (<header className='section__header'>

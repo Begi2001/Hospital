@@ -14,8 +14,8 @@ function TopNewsCard({data}) {
     return (<div className='top__news'>
         <img data-aos="zoom-in" data-aos-duration="4000" src={data.image} alt="" className='image'/>
         <div className='infos'>
-            <div data-aos="zoom-in" data-aos-duration="4000" className='info'><Calendar/>Monday 05, September 2021</div>
-            <div data-aos="zoom-in" data-aos-duration="4000" className='info'><Views/>64</div>
+            <div data-aos="zoom-in" data-aos-duration="4000" className='info'><Calendar/>{data.created_at}</div>
+            <div data-aos="zoom-in" data-aos-duration="4000" className='info'><Views/>{data.views === null ? data.views : '50'}</div>
         </div>
         <p data-aos="zoom-in" data-aos-duration="4000" className='title'>{data.title_ru}</p>
         <p data-aos="zoom-in" data-aos-duration="4000" className='descr'>{data.full_description_ru}</p>

@@ -11,8 +11,7 @@ function FullWidth({data}) {
                     <img src={data.image} alt="" className='fullwidth__head-image'/>
                     <p className='fullwidth__head-title'>{data.title_ru}</p>
                     <div className='fullwidth__head-infos'>
-                        <p className='time'>2 hours</p>
-                        <p className='country'>CNN Indonesia</p>
+                        <p className='time'>{data.created_at}</p>
                     </div>
                 </div>
                 <div className='fullwidth__body'>

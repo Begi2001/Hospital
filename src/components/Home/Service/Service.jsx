@@ -8,20 +8,34 @@ import {ReactComponent as Arrow} from "../../../assets/icons/BlueArrow.svg";
 
 import Container from "../../UsableComponents/Container/Container";
 import Title from "../../UsableComponents/Title/Title";
-
+import {Skeleton} from "@mui/material";
 
 function Service() {
     const {t} = useTranslation();
 
-    const {data = [], isLoading, isError} = useGetDataQuery('our-service')
+    const {data = [], isLoading, isError, isFetching} = useGetDataQuery('our-service')
 
-    if (isError) return <div><h1>Error</h1></div>
-    if (isLoading) return <div><h1>Loading...</h1></div>
-
-    return (<section className='service'>
-        <Container>
-            {data.result.map(serv => (
-                <div className='wrapper'>
+    if (isError && isLoading && isFetching) {
+        return (
+            <section className='service'>
+                <Container>
+                    {data.result.map(serv => (<div className='wrapper'>
+                        <div className='services'>
+                            {serv.our_service_departments.slice(0, 6).map(ser => (
+                                <div key={ser.department_id} className='item'>
+                                    {/*<Skeleton width={70} height={70} variant={"circular"}/>
+                                    <Skeleton width={'50%'} height={25}/>
+                                    <Skeleton width={'100%'} height={75}/>*/}
+                                </div>))}
+                        </div>
+                    </div>))}
+                </Container>
+            </section>
+        )
+    } else {
+        return (<section className='service'>
+            <Container>
+                {data.result.map(serv => (<div className='wrapper'>
                     <Title children={t('service')} url={'/services'}/>
                     <div className='services'>
                         {serv.our_service_departments.slice(0, 6).map(ser => (
@@ -34,10 +48,10 @@ function Service() {
                                          to={`/service/${ser.department_id}`}>{t('urltext')}<Arrow/></NavLink>
                             </div>))}
                     </div>
-                </div>
-            ))}
-        </Container>
-    </section>)
+                </div>))}
+            </Container>
+        </section>)
+    }
 }
 
 export default Service

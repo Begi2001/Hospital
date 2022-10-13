@@ -4,16 +4,37 @@ import {NavLink} from "react-router-dom";
 
 import Logo from "../../../assets/icons/smalllogo.svg";
 import LogoText from "../../../assets/icons/textlogo.svg";
-import {ReactComponent as Menu} from "../../../assets/icons/menu.svg";
-import {ReactComponent as Exit} from "../../../assets/icons/Exit.svg";
-import {ReactComponent as ExitLight} from "../../../assets/icons/ExitLight.svg";
-import Container from "../Container/Container";
 import AppoinmentBtn from "../Buttons/Appoinment/Appoinment";
 import {useTranslation} from "react-i18next";
+import Icon from "../Icon/icon";
+import {AnimatePresence, motion, useCycle} from "framer-motion";
 import AppoinmentSidebar from "../Sidebars/Appoinment/Appoinment.sidebar";
 
 
+const itemVariants = {
+    closed: {
+        opacity: 0
+    }, open: {opacity: 1}
+};
+
+const sideVariants = {
+    closed: {
+        transition: {
+            staggerChildren: 0.2, staggerDirection: -1
+        }
+    }, open: {
+        transition: {
+            staggerChildren: 0.1, staggerDirection: 1
+        }
+    }
+};
+
 function Navbar() {
+    const [order, setOrder] = useState(false)
+
+    const Ali = () => {
+        localStorage.setItem('appmnt', true)
+    }
 
     const {t} = useTranslation();
 
@@ -33,15 +54,9 @@ function Navbar() {
         id: 7, title: `${t('contact')}`, url: '/contact'
     },];
 
-    const [ID, setID] = useState(1);
-    const [open, setOpen] = useState(false);
-    const [order, setOrder] = useState(false);
     const [sticky, setSticky] = useState(false);
-
-    const Ali = () => {
-        localStorage.setItem('appmnt', true)
-    }
-
+    const [open, cycleOpen] = useCycle(false, true);
+    const [birbalo, setBirbalo] = useState(true);
 
     const handleScroll = () => {
         const offset = window.scrollY;
@@ -57,39 +72,58 @@ function Navbar() {
     })
 
     return (<nav className={sticky ? 'stickyNavbar' : 'main__navbar'}>
-        <Container>
-            <div className='wrapper'>
-                <NavLink to={'/'} className='logo'>
-                    <img src={Logo} alt="" className='icon'/>
-                    <img src={LogoText} alt="" className='text'/>
-                </NavLink>
-                <div className='menu'>
-                    {data.map(menu => (<NavLink activeclassname='selected' className='title' to={`${menu.url}`}>
-                        {`${menu.title}`}
-                    </NavLink>))}
-                </div>
-                <div className='btn'>
-                    <AppoinmentBtn children={t('appoinment')} onClick={Ali}/>
-                </div>
-                <div className='hamburger'>
-                    {!!open ? <Exit onClick={e => setOpen(false)}/> : <Menu onClick={e => setOpen(true)}/>}
-                </div>
-                <div className='sidebar' style={{top: !!open ? '140px' : '-300%'}}>
-                    {data.map(menu => (<NavLink key={menu.id} to={menu.url}>
-                        <p id={menu.id} onClick={e => {
-                            setID(e.target.id);
-                            setOpen(false)
-                        }} className='title' className='section__header-titles' style={{
-                            color: ID == menu.id ? '#3585F9' : '#000', fontWeight: ID == menu.id ? '600' : '400'
-                        }}>{menu.title}</p>
-                    </NavLink>))}
-                    <AppoinmentBtn children={'Appointment'} onClick={Ali}/>
+        <div className='wrapper'>
+            <NavLink to={'/'} className='logo'>
+                <img src={Logo} alt="" className='icon'/>
+                <img src={LogoText} alt="" className='text'/>
+            </NavLink>
+            <div className='btn'>
+                <AppoinmentBtn children={t('appoinment')} onClick={() => setOrder(true)}/>
+            </div>
+            <div className='sidebar2'>
+                <AnimatePresence>
+                    {open && (<motion.aside
+                        initial={{width: 0}}
+                        animate={{width: '100vw'}}
+                        exit={{width: 0, transition: {delay: 1.2, duration: 1}}}
+                    >
+                        <motion.div
+                            className="sidebar_container"
+                            initial="closed"
+                            animate="open"
+                            exit="closed"
+                            variants={sideVariants}
+                        >
+                            {data.map(menu => (<>
+                                <NavLink
+                                    onClick={() => {
+                                        cycleOpen();
+                                        setBirbalo(birbalo === true ? false : true);
+                                    }}
+                                    to={menu.url}>
+                                    <motion.p
+                                        className='links'
+                                        key={menu.id}
+                                        whileHover={{scale: 1.1}}
+                                        variants={itemVariants}
+                                    >
+                                        {menu.title}
+                                    </motion.p>
+                                </NavLink>
+                            </>))}
+                        </motion.div>
+                    </motion.aside>)}
+                </AnimatePresence>
+                <div onClick={() => {
+                    cycleOpen();
+                    setBirbalo(false)
+                }}
+                     className="btn_container">
+                    <Icon data={birbalo}/>
                 </div>
             </div>
-        </Container>
-{/*
-        <AppoinmentSidebar isActive={order}/>
-*/}
+            <AppoinmentSidebar order={order} setOrder={setOrder}/>
+        </div>
     </nav>)
 }
 

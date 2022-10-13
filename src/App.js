@@ -18,9 +18,16 @@ import Operation from "./components/Operation/Operation";
 import NewsSingle from "./components/NewsSingle/NewsSingle";
 import BlogSingle from "./components/BlogSingle/BlogSingle";
 import Popup from "./components/UsableComponents/Popup/Popup";
+import {useGetDataQuery} from "./redux";
+import React from "react";
+import Loader from "./components/UsableComponents/Loader/Loader";
 
 function App() {
-    return (<>
+    const {isLoading} = useGetDataQuery('our-service')
+    if (isLoading) {
+        return (<Loader/>)
+    } else {
+        return (<>
             <TopNavbar/>
             <Navbar/>
             <Popup/>
@@ -38,9 +45,9 @@ function App() {
                 <Route path='/service/:id' element={<Service/>}/>
                 <Route path='/services' element={<Services/>}/>
             </Routes>
-            {/*<Footer/>*/}
-        </>
-    );
+            <Footer/>
+        </>);
+    }
 }
 
 export default App;

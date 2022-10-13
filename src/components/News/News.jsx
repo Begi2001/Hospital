@@ -13,7 +13,6 @@ function News() {
     if (isError) return <div>Error</div>
     if (isLoading) return <div>Loading..</div>
 
-    console.log(data.result);
 
     return (<div className='news'>
         {data.result.map(info => (<>

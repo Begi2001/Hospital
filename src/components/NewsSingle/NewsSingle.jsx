@@ -5,10 +5,14 @@ import Container from "../UsableComponents/Container/Container";
 import './NewsSingle.scss'
 import {ReactComponent as String} from "../../assets/icons/String.svg";
 import {useTranslation} from "react-i18next";
+import {useGetSingleQuery} from "../../redux";
+import {useParams} from "react-router-dom";
 
 function NewsSingle() {
     const {t} = useTranslation()
-    const data = {
+    const id = useParams()
+    const {data = [], isLoading, isError,isFetching} = useGetSingleQuery(`/news/single/${id.id}`)
+    const ali = {
         id: 1,
         header_title_uz: `${t('news')}`,
         header_title_ru: `${t('news')}`,
@@ -17,29 +21,25 @@ function NewsSingle() {
         header_image: photo,
     }
 
-    const news = [{
-        id: 1,
-        title: 'About Our News and Some Videos',
-        descr: 'Professor Joshua Clark studied at Havard and qualified in medicine at Harvard Medical School in 1987. He then\n' + 'worked at various New York hospitals for the next five years, including Seattle, and Washington. He also held\n' + 'positions with the Medical Research Council, NY Heart Foundation and the Wellcome Trust.',
-        lastdescr: 'Provide your business with a variety of digital solutions to promote your product or service online and help you.'
-    }]
+    if (isFetching) return <div>Loading...</div>
+    if (isError) return <div>Error</div>
 
     return (<section className='news__single'>
-        <SectionHeaders data={data}/>
+        <SectionHeaders data={ali}/>
         <Container>
-            {news.map(news => (<div className='news__single-item'>
+            <div className='news__single-item' key={data.data[0].news_id}>
                 <div className='newstop'>
-                    <h1 className='newstop__title'>{news.title}</h1>
-                    <p className='newstop__descr'>{news.descr}</p>
-                    <p className='newstop__descr'>{news.descr}</p>
+                    <h1 className='newstop__title'>{data.data[0].title_ru}</h1>
+                    <p className='newstop__descr'>{data.data[0].full_description_ru}</p>
+                    <p className='newstop__descr'>{data.data[0].description_1_ru}</p>
                 </div>
                 <div className='newsbottom'>
                     <String/>
                     <p className='newsbottom__text'>
-                        {news.lastdescr}
+                        {data.data[0].description_2_ru}
                     </p>
                 </div>
-            </div>))}
+            </div>
         </Container>
     </section>)
 }

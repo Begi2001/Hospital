@@ -10,9 +10,9 @@ function NewsCard({data}) {
                  className='newswrapper'>
             <img src={data.image} alt="" className='image'/>
             <div className='infos'>
-                <p className='info'>Monday 05, September 2021</p>
+                <p className='info'>{data.created_at}</p>
                 <p className='title'>{data.title_ru}</p>
-                <div className='views'><Views/> 64</div>
+                <div className='views'><Views/> {data.views === null ? data.views : '50'}</div>
             </div>
         </NavLink>
     )

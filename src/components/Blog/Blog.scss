@@ -18,10 +18,10 @@
   &__posts {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
-    gap: 100px 55px;
+    gap: 100px 60px;
     margin-bottom: 100px;
     @media (max-width: 1250px) {
       justify-content: center;
