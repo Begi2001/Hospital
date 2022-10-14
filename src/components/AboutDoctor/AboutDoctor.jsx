@@ -6,13 +6,14 @@ import Founder from "../About/Founder/Founder";
 import './AboutDoctor.scss'
 import {NavLink, useParams} from "react-router-dom";
 import {useGetSingleQuery} from "../../redux";
+import Loader from "../UsableComponents/Loader/Loader";
 
 function AboutDoctor() {
     const id = useParams()
     const {data = [], isLoading, isError} = useGetSingleQuery(`/doctors/single/${id.id}`)
 
-    if (isError) return <div><h1>Error</h1></div>
-    if (isLoading) return <div><h1>Loading...</h1></div>
+    if (isError) return <Loader/>
+    if (isLoading) return <Loader/>
     const ali = [{
         id: 1,
         header_title_uz: `${data.data[0].full_name_uz}`,

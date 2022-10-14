@@ -6,13 +6,14 @@ import {useGetSingleQuery} from "../../redux";
 import {useParams} from "react-router-dom";
 import ReactPlayer from 'react-player'
 import DoctorCard from "../UsableComponents/Cards/DoctorCard/DoctorCard";
+import Loader from "../UsableComponents/Loader/Loader";
 
 
 function Operation() {
     const id = useParams()
     const {data = [], isLoading, isError} = useGetSingleQuery(`/operations/single/${id.id}`)
-    if (isError) return <div><h1>Error</h1></div>
-    if (isLoading) return <div><h1>Loading...</h1></div>
+    if (isError) return <Loader/>
+    if (isLoading) return <Loader/>
 
     return (<section className='operation__wrapper'>
         {data.data.map(operation => (<>
@@ -27,16 +28,20 @@ function Operation() {
                                className='operation__info-descr'>{operation.detail_description_ru
                             }</p>
                         </div>
-                        <img data-aos="zoom-in" data-aos-duration="4000" src={operation.detail_image[0].detail_image} alt=""
+                        <img data-aos="zoom-in" data-aos-duration="4000" src={operation.detail_image[0].detail_image}
+                             alt=""
                              className='operation__image'/>
                     </div>
                     <div data-aos="zoom-in" data-aos-duration="4000" className='operation__video'>
-                        <ReactPlayer stopOnUnmount={false} pip={true} width={'100%'} height={'100%'} light={true} controls={true} playing url='https://www.youtube.com/watch?v=k2qgadSvNyU&list=RDk2qgadSvNyU&start_radio=1'/>
+                        <ReactPlayer stopOnUnmount={false} pip={true} width={'100%'} height={'100%'} light={true}
+                                     controls={true} playing
+                                     url='https://www.youtube.com/watch?v=k2qgadSvNyU&list=RDk2qgadSvNyU&start_radio=1'/>
                     </div>
 
                     <p data-aos="zoom-in" data-aos-duration="4000" className='operation__actions'>Reasons and
                         Actions taken</p>
-                    <p data-aos="zoom-in" data-aos-duration="4000" className='operation__text'>{operation.full_description_ru}</p>
+                    <p data-aos="zoom-in" data-aos-duration="4000"
+                       className='operation__text'>{operation.full_description_ru}</p>
                     <div className='partical'>
                         <p className='partical__title'>Partical Doctors</p>
                         <div className="slider">

@@ -8,6 +8,7 @@ import {ReactComponent as User} from "../../assets/icons/user.svg";
 import {useGetSingleQuery} from "../../redux";
 import {useParams} from "react-router-dom";
 import {useTranslation} from "react-i18next";
+import Loader from "../UsableComponents/Loader/Loader";
 
 
 const service = {
@@ -36,8 +37,8 @@ function Service() {
 
     const {data = [], isLoading, isError} = useGetSingleQuery(`/our-service/single/${id.id}`)
 
-    if (isError) return <div><h1>Error</h1></div>
-    if (isLoading) return <div><h1>Loading...</h1></div>
+    if (isError) return <Loader/>
+    if (isLoading) return <Loader/>
 
     const ali = [{
         id: 1,

@@ -21,6 +21,7 @@ import Popup from "./components/UsableComponents/Popup/Popup";
 import {useGetDataQuery} from "./redux";
 import React from "react";
 import Loader from "./components/UsableComponents/Loader/Loader";
+import ScrollTop from "./components/UsableComponents/ScrollTop/Scroll";
 
 function App() {
     const {isLoading} = useGetDataQuery('our-service')
@@ -28,6 +29,7 @@ function App() {
         return (<Loader/>)
     } else {
         return (<>
+            <ScrollTop/>
             <TopNavbar/>
             <Navbar/>
             <Popup/>

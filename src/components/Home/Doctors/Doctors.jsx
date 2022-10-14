@@ -8,18 +8,14 @@ import Container from "../../UsableComponents/Container/Container";
 import Title from "../../UsableComponents/Title/Title";
 import DoctorCard from "../../UsableComponents/Cards/DoctorCard/DoctorCard";
 import {Skeleton} from "@mui/material";
+import Loader from "../../UsableComponents/Loader/Loader";
 
 function Doctors() {
     const {t} = useTranslation()
     const {data = [], isError, isLoading} = useGetDataQuery('doctors')
+    if (isError) return <Loader/>
     if (isLoading) {
-        return (<section
-            style={{display: "flex", justifyContent: 'center', maxWidth: '1280px', margin: '0 auto', gap: '20px 50px'}}>
-            {/*<Skeleton height={500} width={250}/>
-            <Skeleton height={500} width={250}/>
-            <Skeleton height={500} width={250}/>
-            <Skeleton height={500} width={250}/>*/}
-        </section>);
+        return (<Loader/>);
     } else {
         return (<section className="doctors">
             <Container>

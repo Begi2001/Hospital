@@ -8,7 +8,6 @@ import {ReactComponent as Arrow} from "../../../assets/icons/BlueArrow.svg";
 
 import Container from "../../UsableComponents/Container/Container";
 import Title from "../../UsableComponents/Title/Title";
-import {Skeleton} from "@mui/material";
 
 function Service() {
     const {t} = useTranslation();

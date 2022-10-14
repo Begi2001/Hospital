@@ -7,12 +7,13 @@ import SectionHeaders from "../UsableComponents/SectionHeaders/SectionHeader";
 import Client from "./Clients/Client";
 import Container from "../UsableComponents/Container/Container";
 import DoctorCard from "../UsableComponents/Cards/DoctorCard/DoctorCard";
+import Loader from "../UsableComponents/Loader/Loader";
 
 function Doctors() {
     const {data = [],isLoading,isError} = useGetDataQuery('doctors')
 
-    if (isError) return <div> <h1>Error</h1> </div>
-    if (isLoading) return <div> <h1>Loading...</h1> </div>
+    if (isError) return <Loader/>
+    if (isLoading) return <Loader/>
 
     return (<section className='docs'>
         {data.result.map(doc => (

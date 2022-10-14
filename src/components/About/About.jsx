@@ -11,6 +11,7 @@ import SectionHeaders from "../UsableComponents/SectionHeaders/SectionHeader";
 import Founder from "./Founder/Founder";
 import Programs from "./Programs/Programs";
 import Question from "./Questions/Question";
+import Loader from "../UsableComponents/Loader/Loader";
 
 const founder = {
     id: 1,
@@ -27,8 +28,8 @@ const founder = {
 
 function About() {
     const {data = [], isLoading, isError} = useGetDataQuery('about-us')
-    if (isError) return <div><h1>Error</h1></div>
-    if (isLoading) return <div><h1>Loading...</h1></div>
+    if (isError) return <Loader/>
+    if (isLoading) return <Loader/>
     return (<section className='aboutMain'>
         {data.result.map(about => (
             <div key={about.id}>

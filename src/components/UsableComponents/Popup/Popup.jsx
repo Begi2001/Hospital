@@ -22,11 +22,11 @@ function Popup() {
     const [inputColor, setInputColor] = useState(false);
     const [disabledBtn, setDisabledBtn] = useState(false);
 
-    /*useEffect(() => {
+    useEffect(() => {
         setTimeout(() => {
             setOpen(true)
         }, 15000)
-    }, []);*/
+    }, []);
 
     const murkup = <Alert severity="success" action={
         <IconButton aria-label="close" color="inherit" size="small" onClick={() => { setSuccesO(false) }}>

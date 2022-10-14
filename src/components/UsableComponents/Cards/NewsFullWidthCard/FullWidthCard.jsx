@@ -1,4 +1,4 @@
-import React, {Suspense} from 'react'
+import React from 'react'
 import './FullWidth.scss'
 import {NavLink} from "react-router-dom";
 

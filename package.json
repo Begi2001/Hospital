@@ -1,6 +1,6 @@
 {
-  "name": "medart2",
-  "version": "0.1.0",
+  "name": "medart",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.4",
@@ -60,5 +60,16 @@
     "@reduxjs/toolkit": "^1.8.5",
     "node-sass": "^7.0.3",
     "react-router-dom": "^6.3.0"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SayKham99/Hospital.git"
+  },
+  "author": "Saydullaev Khamidullo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SayKham99/Hospital/issues"
+  },
+  "homepage": "https://localhost:3000/"
 }

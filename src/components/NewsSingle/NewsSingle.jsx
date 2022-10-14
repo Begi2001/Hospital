@@ -7,11 +7,12 @@ import {ReactComponent as String} from "../../assets/icons/String.svg";
 import {useTranslation} from "react-i18next";
 import {useGetSingleQuery} from "../../redux";
 import {useParams} from "react-router-dom";
+import Loader from "../UsableComponents/Loader/Loader";
 
 function NewsSingle() {
     const {t} = useTranslation()
     const id = useParams()
-    const {data = [], isLoading, isError,isFetching} = useGetSingleQuery(`/news/single/${id.id}`)
+    const {data = [], isLoading, isError} = useGetSingleQuery(`/news/single/${id.id}`)
     const ali = {
         id: 1,
         header_title_uz: `${t('news')}`,
@@ -21,8 +22,8 @@ function NewsSingle() {
         header_image: photo,
     }
 
-    if (isFetching) return <div>Loading...</div>
-    if (isError) return <div>Error</div>
+    if (isLoading) return <Loader/>
+    if (isError) return <Loader/>
 
     return (<section className='news__single'>
         <SectionHeaders data={ali}/>

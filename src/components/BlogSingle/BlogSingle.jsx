@@ -9,12 +9,13 @@ import {useParams} from "react-router-dom";
 import {useGetSingleQuery} from "../../redux";
 import {useTranslation} from "react-i18next";
 import ReactPlayer from "react-player";
+import Loader from "../UsableComponents/Loader/Loader";
 
 
 function BlogSingle() {
     const {t} = useTranslation()
     const id = useParams()
-    const {data = [], isLoading, isError, isFetching} = useGetSingleQuery(`/blogs/single/${id.id}`)
+    const {data = [], isLoading, isError} = useGetSingleQuery(`/blogs/single/${id.id}`)
 
     console.log(data.data);
 
@@ -46,9 +47,8 @@ function BlogSingle() {
             }
     }
 
-    if (isFetching) return <div>Fetching</div>
-    if (isLoading) return <div>Loading</div>
-    if (isError) return <div>Error</div>
+    if (isLoading) return <Loader/>
+    if (isError) return <Loader/>
 
     return (<section className='blog__single'>
         {ali.map(type => (<SectionHeaders data={type}/>))}

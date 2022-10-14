@@ -6,13 +6,14 @@ import Container from "../../UsableComponents/Container/Container";
 import Title from "../../UsableComponents/Title/Title";
 import './News.scss'
 import {useGetDataQuery} from "../../../redux";
+import Loader from "../../UsableComponents/Loader/Loader";
 
 function News() {
     const {t} = useTranslation()
     const {data = [], isError, isLoading} = useGetDataQuery('news')
 
-    if (isError) return <div>Error</div>
-    if (isLoading) return <div>Loading..</div>
+    if (isError) return <Loader/>
+    if (isLoading) return <Loader/>
 
     return (<section className='news'>
         <Container>

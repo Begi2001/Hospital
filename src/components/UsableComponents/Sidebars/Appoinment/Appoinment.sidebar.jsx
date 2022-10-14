@@ -75,9 +75,9 @@ function AppoinmentSidebar({order, setOrder}) {
                             </ul>
                         </div>
                     </div>
-                    <input className='worked__inputs-input' type="text" onChange={(e) => setName(e.target.value)}/>
-                    <input className='worked__inputs-input' type="email" onChange={(e) => setEmail(e.target.value)}/>
-                    <input className='worked__inputs-input' type="tel" onChange={(e) => setNumber(e.target.value)}/>
+                    <input className='worked__inputs-input' type="text" placeholder={'Enter your Name'} onChange={(e) => setName(e.target.value)}/>
+                    <input className='worked__inputs-input' type="email" placeholder={'Enter your Email'} onChange={(e) => setEmail(e.target.value)}/>
+                    <input className='worked__inputs-input' type="tel" placeholder={'Enter your Number'} onChange={(e) => setNumber(e.target.value)}/>
                     <input className='worked__inputs-input' type="date" onChange={(e) => setDate(e.target.value)}/>
                     <input className='worked__inputs-btn' type="submit" value={t('appoinment_submit')} onClick={(e) => {
                         setOrder(false);

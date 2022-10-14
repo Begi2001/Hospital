@@ -5,12 +5,13 @@ import BigBlog from "../UsableComponents/Cards/BigBlogCard/BigBlogCard";
 import './Blog.scss'
 import SmallBlog from "../UsableComponents/Cards/SmallBlogCard/SmallBlog";
 import {useGetDataQuery} from "../../redux";
+import Loader from "../UsableComponents/Loader/Loader";
 
 function Blog() {
     const {data = [], isLoading, isError} = useGetDataQuery('blogs')
 
-    if (isLoading) return <div>Loading</div>
-    if (isError) return <div>Error</div>
+    if (isLoading) return <Loader/>
+    if (isError) return <Loader/>
 
     return (<div className='blog'>
         {data.result.map(item => (

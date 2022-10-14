@@ -5,13 +5,14 @@ import FullWidth from "../UsableComponents/Cards/NewsFullWidthCard/FullWidthCard
 import './News.scss'
 import SmallCard from "../UsableComponents/Cards/SmallNewsCard/SmallCard";
 import {useGetDataQuery} from "../../redux";
+import Loader from "../UsableComponents/Loader/Loader";
 
 
 function News() {
     const {data = [], isError, isLoading} = useGetDataQuery('news')
 
-    if (isError) return <div>Error</div>
-    if (isLoading) return <div>Loading..</div>
+    if (isError) return <Loader/>
+    if (isLoading) return <Loader/>
 
 
     return (<div className='news'>

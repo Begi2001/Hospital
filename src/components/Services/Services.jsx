@@ -9,6 +9,7 @@ import SectionHeader from "../UsableComponents/SectionHeaders/SectionHeader";
 import Container from "../UsableComponents/Container/Container";
 import ServiceCard from "../UsableComponents/Cards/ServiceCard/ServiceCard";
 import Faq from "../UsableComponents/FAQs/Faq";
+import Loader from "../UsableComponents/Loader/Loader";
 
 const info = {
     id: 1,
@@ -20,8 +21,8 @@ const info = {
 function Services() {
     const {data, isLoading, isError} = useGetDataQuery('our-service')
 
-    if (isError) return <div><h1>Error</h1></div>
-    if (isLoading) return <div><h1>Loading ...</h1></div>
+    if (isError) return <Loader/>
+    if (isLoading) return <Loader/>
 
     return (<section className='service__main'>
         {data.result.map(service => (<>

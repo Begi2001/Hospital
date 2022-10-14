@@ -6,13 +6,14 @@ import BlogCard from "../../UsableComponents/Cards/BlogCard/BlogCard";
 
 import {useTranslation} from "react-i18next";
 import {useGetDataQuery} from "../../../redux";
+import Loader from "../../UsableComponents/Loader/Loader";
 
 function Blog() {
     const {data = [], isLoading, isError} = useGetDataQuery('blogs')
 
     const {t} = useTranslation()
-    if (isLoading) return <div><h1>Loading...</h1></div>
-    if (isError) return <div><h1>Error</h1></div>
+    if (isLoading) return <Loader/>
+    if (isError) return <Loader/>
     return (
         <section className='blog'>
             <Container>
