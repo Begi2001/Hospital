@@ -1,86 +1,15 @@
-@mixin white-gradient {
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-}
-
-$animationSpeed: 20s;
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-275px * 7));
-  }
-}
-
 .doctors {
   position: relative;
   width: 100%;
   margin-bottom: 100px;
   overflow: hidden;
 
-  // .slider {
-  //   display: flex;
-  //   width: 100%;
-
-  //   &::before,
-  //   &::after {
-  //     @include white-gradient;
-  //     content: "";
-  //     height: 125px;
-  //     position: absolute;
-  //     width: 200px;
-  //     z-index: 2;
-  //   }
-
-  //   &::after {
-  //     right: 0;
-  //     top: 0;
-  //     transform: rotateZ(180deg);
-  //   }
-
-  //   &::before {
-  //     left: 0;
-  //     top: 0;
-  //   }
-
-  //   .slide-track {
-  //     // border: 1px solid red;
-  //     animation: scroll $animationSpeed linear infinite;
-  //     display: flex;
-  //     width: calc(250px * 14);
-  //     justify-content: space-between !important;
-  //   }
-  // }
-
-  // .doctors__container {
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  //   gap: 15px;
-
-  //   .doctors__wrapper {
-  //     display: flex;
-  //     justify-content: center;
-  //     align-items: center;
-  //     gap: 35px;
-  //     overflow-x: auto;
-  //     margin-bottom: -20px;
-  //     padding-bottom: 30px;
-  //     padding-left: 15px;
-  //     border: 1px solid rgb(0, 4, 255);
-  //   }
-  // }
-
   .doctors__wrapper {
     display: flex;
     width: 100%;
     gap: 30px;
   }
+
   .swiper-wrapper {
     width: 100%;
     height: 800px;
@@ -88,6 +17,7 @@ $animationSpeed: 20s;
     justify-content: center;
     padding-left: 370px;
   }
+
   .swiper-slide {
     height: 500px;
     text-align: center;
@@ -107,6 +37,7 @@ $animationSpeed: 20s;
     align-items: center;
     max-width: 350px !important;
   }
+
   .swiper {
     display: flex;
     width: 100%;
@@ -115,66 +46,27 @@ $animationSpeed: 20s;
       background-repeat: no-repeat;
       display: flex;
       align-items: flex-end;
-      .infoDocs {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding-left: 25px;
-        margin-bottom: 30px;
-        :nth-child(1) {
-          font-family: "Work Sans";
-          font-style: normal;
-          font-weight: 700;
-          font-size: 32px;
-          line-height: 40px;
-          color: #3585f9;
-        }
-        :nth-child(2) {
-          font-family: "Work Sans";
-          font-style: normal;
-          font-weight: 700;
-          font-size: 32px;
-          line-height: 40px;
-          color: #444444;
-        }
-        :nth-child(3) {
-          font-family: "Work Sans";
-          font-style: normal;
-          font-weight: 700;
-          font-size: 32px;
-          line-height: 40px;
-          color: #444444;
-        }
-      }
+      gap: 35px;
     }
+
     .swiper-button-lock {
       display: block;
     }
+
     .swiper-pagination {
       display: none;
     }
+
     .swiper-button-next {
       position: absolute;
       top: 570px;
       left: 270px;
     }
+
     .swiper-button-prev {
       position: absolute;
       top: 570px;
       left: 225px;
     }
-  }
-
-  .append-buttons button {
-    display: inline-block;
-    cursor: pointer;
-    border: 1px solid #007aff;
-    color: #007aff;
-    text-decoration: none;
-    padding: 4px 10px;
-    border-radius: 4px;
-    margin: 0 10px;
-    font-size: 13px;
   }
 }
