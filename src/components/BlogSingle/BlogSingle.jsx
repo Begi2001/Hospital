@@ -17,8 +17,6 @@ function BlogSingle() {
     const id = useParams()
     const {data = [], isLoading, isError} = useGetSingleQuery(`/blogs/single/${id.id}`)
 
-    console.log(data.data);
-
     const ali = [{
         id: 1,
         header_title_uz: `${t('contact')}`,

@@ -6,11 +6,12 @@ import './News.scss'
 import SmallCard from "../UsableComponents/Cards/SmallNewsCard/SmallCard";
 import {useGetDataQuery} from "../../redux";
 import Loader from "../UsableComponents/Loader/Loader";
+import {useTranslation} from "react-i18next";
 
 
 function News() {
     const {data = [], isError, isLoading} = useGetDataQuery('news')
-
+    const {t} = useTranslation()
     if (isError) return <Loader/>
     if (isLoading) return <Loader/>
 
@@ -24,7 +25,7 @@ function News() {
                         <FullWidth data={zero}/>))}
                 </div>
                 <div className='news__middle'>
-                    <h1 className='news__middle-title'>Top News</h1>
+                    <h1 className='news__middle-title'>{t('topnews')}</h1>
                     <div className='news__middle-news'>
                         {info.news_infos.filter(item => item.popularity === "Yo`q").slice(0, 8).map(zero => (
                             <SmallCard data={zero}/>))}
@@ -35,7 +36,7 @@ function News() {
                         <FullWidth data={zero}/>))}
                 </div>
                 <div className='news__footer'>
-                    <h1 className='news__middle-title'>Top News</h1>
+                    <h1 className='news__middle-title'>{t('topnews')}</h1>
                     <div className='news__middle-news'>
                         {info.news_infos.filter(item => item.popularity === "Yo`q").slice(8, 16).map(zero => (
                             <SmallCard data={zero}/>))}

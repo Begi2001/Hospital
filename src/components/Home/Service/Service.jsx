@@ -10,6 +10,7 @@ import Container from "../../UsableComponents/Container/Container";
 import Title from "../../UsableComponents/Title/Title";
 
 function Service() {
+    const lang = localStorage.getItem('i18nextLng')
     const {t} = useTranslation();
 
     const {data = [], isLoading, isError, isFetching} = useGetDataQuery('our-service')
@@ -40,9 +41,10 @@ function Service() {
                         {serv.our_service_departments.slice(0, 6).map(ser => (
                             <div key={ser.department_id} className='item'>
                                 <img data-aos="zoom-out" data-aos-duration="1000" src={ser.icon} alt=""/>
-                                <p data-aos="zoom-out" data-aos-duration="1000" className='title'>{ser.name_ru}</p>
                                 <p data-aos="zoom-out" data-aos-duration="1000"
-                                   className='descr'>{ser.description_ru}</p>
+                                   className='title'>{lang === 'uz' ? ser.name_uz : ser.name_ru}</p>
+                                <p data-aos="zoom-out" data-aos-duration="1000"
+                                   className='descr'>{lang === 'uz' ? ser.description_uz : ser.description_ru}</p>
                                 <NavLink data-aos="zoom-out" data-aos-duration="1000" className='link'
                                          to={`/service/${ser.department_id}`}>{t('urltext')}<Arrow/></NavLink>
                             </div>))}

@@ -12,6 +12,8 @@ import Loader from "../UsableComponents/Loader/Loader";
 function NewsSingle() {
     const {t} = useTranslation()
     const id = useParams()
+    const lang = localStorage.getItem('i18nextLng')
+
     const {data = [], isLoading, isError} = useGetSingleQuery(`/news/single/${id.id}`)
     const ali = {
         id: 1,
@@ -30,14 +32,14 @@ function NewsSingle() {
         <Container>
             <div className='news__single-item' key={data.data[0].news_id}>
                 <div className='newstop'>
-                    <h1 className='newstop__title'>{data.data[0].title_ru}</h1>
-                    <p className='newstop__descr'>{data.data[0].full_description_ru}</p>
-                    <p className='newstop__descr'>{data.data[0].description_1_ru}</p>
+                    <h1 className='newstop__title'>{lang === 'uz' ? data.data[0].title_uz : data.data[0].title_ru}</h1>
+                    <p className='newstop__descr'>{lang === 'uz' ? data.data[0].full_description_uz : data.data[0].full_description_ru}</p>
+                    <p className='newstop__descr'>{lang === 'uz' ? data.data[0].description_1_uz : data.data[0].description_1_ru}</p>
                 </div>
                 <div className='newsbottom'>
                     <String/>
                     <p className='newsbottom__text'>
-                        {data.data[0].description_2_ru}
+                        {lang === 'uz' ? data.data[0].description_2_uz : data.data[0].description_2_ru}
                     </p>
                 </div>
             </div>
