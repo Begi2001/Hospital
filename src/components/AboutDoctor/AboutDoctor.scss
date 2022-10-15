@@ -140,6 +140,11 @@
           line-height: 25px;
           color: $dark;
           margin-bottom: 35px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
           @media (max-width: 940px) {
             margin-bottom: 20px;
           }

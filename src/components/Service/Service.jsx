@@ -11,31 +11,36 @@ import {useTranslation} from "react-i18next";
 import Loader from "../UsableComponents/Loader/Loader";
 
 
-const service = {
-    id: 1,
-    title: 'How is our service',
-    descr: 'Professor Joshua Clark studied at Havard and qualified in medicine at Harvard Medical School in 1987. He then worked at various New York hospitals for the next five years, including Seattle, and Washington. He also held positions with the Medical Research Council, NY Heart Foundation and the Wellcome Trust.',
-    lastdescr: 'He worked as a thoracic and general surgeon in the north of NY and was appointed as a senior researcher in the Medical Research Institute of the New York Academy of Medical Sciences, with the main clinical focus of oesophageal surgery. He continued in this post until his move to the Seattle in the early 1992.',
-    opening: [{
-        id: 1,
-        title: 'Opening hours',
-        days: [{id: 1, days: 'Mon - Fri', time: '08:00 - 21:00'}, {id: 2, days: 'Sat - Sun', time: '08:00 - 19:00'}],
-        descr: 'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.'
-    }],
-    emergency: [{
-        id: 1,
-        title: 'Emergency Service',
-        descr: 'An emergency department (ED), also known as an accident & emergency department (A&E), emergency room (ER), emergency ward (EW) or casualty department, is a medical treatment.',
-        text: 'Call : +1-2345-3455-33',
-        url: 'tel:+12345345533'
-    }],
-}
-
 function Service() {
     const id = useParams()
     const {t} = useTranslation()
+    const lang = localStorage.getItem('i18nextLng')
 
     const {data = [], isLoading, isError} = useGetSingleQuery(`/our-service/single/${id.id}`)
+
+    const service = {
+        id: 1,
+        title: `${t('serviceservicetitle')}`,
+        descr: `${t('serviceservicedescr')}`,
+        lastdescr: `${t('serviceservicelastdescr')}`,
+        opening: [{
+            id: 1,
+            title: `${t('serviceopeningtitle')}`,
+            days: [{id: 1, days: `${t('serviceopeningdays1')}`, time: '08:00 - 21:00'}, {
+                id: 2,
+                days: `${t('serviceopeningdays1')}`,
+                time: '08:00 - 19:00'
+            }],
+            descr: `${t('serviceopeningdescr')}`,
+        }],
+        emergency: [{
+            id: 1,
+            title: `${t('serviceemergencytitle')}`,
+            descr: `${t('serviceemergencydescr')}`,
+            text: `${t('serviceemergencycall')}`,
+            url: 'tel:+12345345533'
+        }],
+    }
 
     if (isError) return <Loader/>
     if (isLoading) return <Loader/>
@@ -54,10 +59,10 @@ function Service() {
         <Container>
             <div className='service__single-wrapper'>
                 <div key={data.data[0].department_id} className='service__single-info'>
-                    <h1 className='service__title'>{data.data[0].name_uz}</h1>
-                    <p className='service__descr'>{data.data[0].description_ru}</p>
+                    <h1 className='service__title'>{lang === 'uz' ? data.data[0].name_uz : data.data[0].name_ru}</h1>
+                    <p className='service__descr'>{lang === 'uz' ? data.data[0].description_uz : data.data[0].description_ru}</p>
                     <hr className='divider'/>
-                    <p className='service__descr'>{data.data[0].full_description_uz}</p>
+                    <p className='service__descr'>{lang === 'uz' ? data.data[0].full_description_uz : data.data[0].full_description_uz}</p>
                 </div>
                 <div className='opening'>
                     <p className='opening__title'><span><Clock/></span>{service.opening[0].title}</p>
@@ -73,10 +78,10 @@ function Service() {
 
             <div className='service__single-item'>
                 <div key={data.data[0].department_id} className='service__single-info'>
-                    <h1 className='service__title'>{data.data[0].name_uz}</h1>
-                    <p className='service__descr'>{data.data[0].description_ru}</p>
+                    <h1 className='service__title'>{lang === 'uz' ? data.data[0].name_uz : data.data[0].name_ru}</h1>
+                    <p className='service__descr'>{lang === 'uz' ? data.data[0].description_uz : data.data[0].description_ru}</p>
                     <hr className='divider'/>
-                    <p className='service__descr'>{data.data[0].full_description_uz}</p>
+                    <p className='service__descr'>{lang === 'uz' ? data.data[0].full_description_uz : data.data[0].full_description_uz}</p>
                 </div>
                 <div className='opening'>
                     <p className='opening__title'><span><User/></span>{service.emergency[0].title}</p>

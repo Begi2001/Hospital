@@ -7,13 +7,16 @@ import {useParams} from "react-router-dom";
 import ReactPlayer from 'react-player'
 import DoctorCard from "../UsableComponents/Cards/DoctorCard/DoctorCard";
 import Loader from "../UsableComponents/Loader/Loader";
+import {useTranslation} from "react-i18next";
 
 
 function Operation() {
+    const {t} = useTranslation()
     const id = useParams()
     const {data = [], isLoading, isError} = useGetSingleQuery(`/operations/single/${id.id}`)
     if (isError) return <Loader/>
     if (isLoading) return <Loader/>
+    const lang = localStorage.getItem('i18nextLng')
 
     return (<section className='operation__wrapper'>
         {data.data.map(operation => (<>
@@ -23,10 +26,9 @@ function Operation() {
                     <div className='operation'>
                         <div className='operation__info'>
                             <h1 data-aos="zoom-in" data-aos-duration="4000"
-                                className='operation__info-title'>{operation.title_ru}</h1>
+                                className='operation__info-title'>{lang === 'uz' ? operation.title_uz : operation.title_ru}</h1>
                             <p data-aos="zoom-in" data-aos-duration="4000"
-                               className='operation__info-descr'>{operation.detail_description_ru
-                            }</p>
+                               className='operation__info-descr'>{lang === 'uz' ? operation.detail_description_uz : operation.detail_description_ru}</p>
                         </div>
                         <img data-aos="zoom-in" data-aos-duration="4000" src={operation.detail_image[0].detail_image}
                              alt=""
@@ -38,12 +40,12 @@ function Operation() {
                                      url='https://www.youtube.com/watch?v=k2qgadSvNyU&list=RDk2qgadSvNyU&start_radio=1'/>
                     </div>
 
-                    <p data-aos="zoom-in" data-aos-duration="4000" className='operation__actions'>Reasons and
-                        Actions taken</p>
                     <p data-aos="zoom-in" data-aos-duration="4000"
-                       className='operation__text'>{operation.full_description_ru}</p>
+                       className='operation__actions'>{t('operationaction')}</p>
+                    <p data-aos="zoom-in" data-aos-duration="4000"
+                       className='operation__text'>{lang === 'uz' ? operation.full_description_uz : operation.full_description_ru}</p>
                     <div className='partical'>
-                        <p className='partical__title'>Partical Doctors</p>
+                        <p className='partical__title'>{t('operationdoctors')}</p>
                         <div className="slider">
                             <div className="slide-track">
                                 <div className="doctors__container">
