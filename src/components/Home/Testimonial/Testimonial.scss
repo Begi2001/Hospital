@@ -56,12 +56,12 @@
   }
 }
 
-@media (max-width: 425px) {
-  .swiper-button-next,
-  .swiper-button-prev, {
-    display: none;
-  }
-}
+// @media (max-width: 425px) {
+//   .swiper-button-next,
+//   .swiper-button-prev, {
+//     display: none;
+//   }
+// }
 .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
   bottom: -3px;
 }
