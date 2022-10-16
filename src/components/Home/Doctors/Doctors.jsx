@@ -18,47 +18,62 @@ import {Pagination, Navigation} from "swiper";
 function Doctors() {
     const [setSwiperRef] = useState(null);
 
-    const {t} = useTranslation();
-    const {data = [], isError, isLoading} = useGetDataQuery("doctors");
-
-    if (isError) return <Loader/>;
-    if (isLoading) return <Loader/>;
-
-    localStorage.setItem('doctors', JSON.stringify(data.result[0].doctor_infos))
+  const { t } = useTranslation();
+  const { data = [], isError, isLoading } = useGetDataQuery("doctors");
+  if (isError) return <Loader />;
+  if (isLoading) {
+    return <Loader />;
+  } else {
     return (
-        <section className="doctors">
-            <Container>
-                <Title children={t("doctors")} url={"/doctors"}/>
-            </Container>
-            <Swiper
-                onSwiper={setSwiperRef}
-                slidesPerView={3}
-                centeredSlides={false}
-                spaceBetween={35}
-                pagination={{
-                    type: "fraction",
-                }}
-                allowSlideNext={true}
-                navigation={true}
-                modules={[Pagination, Navigation]}
-                className="mySwiper"
-            >
-                {data.result.map((docs) => (<>
-                        {docs.doctor_infos.map(doctor => (
-                            <SwiperSlide
-                                className="sliderSwaper"
-                                style={{
-                                    backgroundImage: `url(${docs.img})`,
-                                }}
-                            >
-                                <DoctorCard data={doctor}/>
-                            </SwiperSlide>
-                        ))}
-                    </>
-                ))}
-            </Swiper>
-        </section>
+      <section className="doctors">
+        <Container>
+          <Title children={t("doctors")} url={"/doctors"} />
+        </Container>
+        <Swiper
+          className="mySwiper"
+          onSwiper={setSwiperRef}
+          slidesPerView={3}
+          centeredSlides={false}
+          pagination={{
+            type: "fraction",
+          }}
+          breakpoints={{
+            1185: {
+              spaceBetween: 5,
+              slidesPerView: 2,
+            },
+            1025: {
+              spaceBetween: 5,
+              slidesPerView: 1,
+            },
+            310: {
+              spaceBetween: 5,
+
+              slidesPerView: 1,
+            },
+          }}
+          allowSlideNext={true}
+          navigation={true}
+          modules={[Pagination, Navigation]}
+        >
+          {data.result.map((docs) => (
+            <>
+              {docs.doctor_infos.map((doctor) => (
+                <SwiperSlide
+                  className="sliderSwaper"
+                  style={{
+                    backgroundImage: `url(${docs.img})`,
+                  }}
+                >
+                  <DoctorCard data={doctor} />
+                </SwiperSlide>
+              ))}
+            </>
+          ))}
+        </Swiper>
+      </section>
     );
+  }
 }
 
 export default Doctors;
