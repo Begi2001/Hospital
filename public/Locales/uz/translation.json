@@ -100,6 +100,18 @@
   "serviceopeningdescr": "Uzoqda, tog'lar so'zining orqasida, Vokalia va Consonantia mamlakatlaridan uzoqda.",
   "serviceemergencytitle": "Tez yordam xizmati",
   "serviceemergencydescr": "Favqulodda vaziyatlar bo'limi (ED), shuningdek, baxtsiz hodisa va tez yordam bo'limi (A&E), tez yordam xonasi (ER), tez yordam bo'limi (EW) yoki jarohatlar bo'limi sifatida ham tanilgan, tibbiy yordamdir.",
-  "serviceemergencycall": "Qo'ng'iroq qiling: +1-2345-3455-33"
+  "serviceemergencycall": "Qo'ng'iroq qiling: +1-2345-3455-33",
+  "footertext": "Tibbiy mukammallik, ishonchli parvarish bo'yicha etakchi.",
+  "services": "xizmatlar",
+  "aboutUs": "Biz haqimizda",
+  "call": "qo'ng'iroq",
+  "email": "Elektron pochta",
+  "addres": "manzil",
+  "importantPage": "muhim sahifalalar",
+  "contacts": "aloqalar"
+
+
+
+
 
 }
