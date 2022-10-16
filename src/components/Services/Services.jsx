@@ -21,6 +21,7 @@ const info = {
 function Services() {
     const {data, isLoading, isError} = useGetDataQuery('our-service')
 
+
     if (isError) return <Loader/>
     if (isLoading) return <Loader/>
 
@@ -32,12 +33,14 @@ function Services() {
                     {service.our_service_departments.map(serv => (<ServiceCard data={serv}/>))}
                 </div>
                 <div key={info.id} className='info__wrapper'>
-                    <img data-aos="zoom-in" data-aos-duration="4000" src={Image} alt="" className='info__wrapper-image'/>
+                    <img data-aos="zoom-in" data-aos-duration="4000" src={Image} alt=""
+                         className='info__wrapper-image'/>
                     <div className='info__wrapper-text'>
                         <div data-aos="zoom-in" data-aos-duration="4000">
-                        <Tilda/>
+                            <Tilda/>
                         </div>
-                        <p data-aos="zoom-in" data-aos-duration="4000" className='text'>Historically, drugs were discovered through
+                        <p data-aos="zoom-in" data-aos-duration="4000" className='text'>Historically, drugs were
+                            discovered through
                             identifying the active ingredient from
                             traditional remedies or by serendipitous
                             discovery. Later chemical libraries of

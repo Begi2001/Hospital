@@ -1,75 +1,31 @@
 import React from 'react'
 import './Partners.scss'
+import {useGetDataQuery} from "../../../redux";
+import Loader from "../Loader/Loader";
 
-import Endo from "../../../assets/icons/Partner1.svg";
-import Anamed from "../../../assets/icons/Partner2.svg";
-import AR from "../../../assets/icons/Partner3.svg";
-import DoctorCard from "../Cards/DoctorCard/DoctorCard";
-import {NavLink} from "react-router-dom";
-
-const data = [
-    {
-        id: 1,
-        icon: Endo,
-        url:'/'
-    },
-    {
-        id: 2,
-        icon: Anamed,
-        url:'/'
-    },
-    {
-        id: 3,
-        icon: AR,
-        url:'/'
-    },{
-        id: 1,
-        icon: Endo,
-        url:'/'
-    },
-    {
-        id: 2,
-        icon: Anamed,
-        url:'/'
-    },
-    {
-        id: 3,
-        icon: AR,
-        url:'/'
-    },{
-        id: 1,
-        icon: Endo,
-        url:'/'
-    },
-    {
-        id: 2,
-        icon: Anamed,
-        url:'/'
-    },
-    {
-        id: 3,
-        icon: AR,
-        url:'/'
-    },
-]
 
 function Partners() {
-    return (
-          <div className='partners'>
-              <div className="slider">
-                  <div className="slide-track">
-                      <div className="doctors__container">
-                          <div className="doctors__wrapper">
-                              {data.map((doc) => (
-                                    <NavLink to={doc.url}>
-                                        <img key={doc.id} src={doc.icon} alt=""/>
-                                    </NavLink>
-                              ))}
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>)
+    const {data = [], isLoading} = useGetDataQuery('sponsors')
+    if (isLoading) return <Loader/>
+    return (<div className='partners'>
+        <div className="slider">
+            <div className="slide-track">
+                <div className="doctors__container">
+                    <div className="doctors__wrapper">
+                        {data.result.map((doc) => (<>
+                            <img key={doc.id} src={doc.image} alt=""/>
+                        </>))}
+                        {data.result.map((doc) => (<>
+                            <img key={doc.id} src={doc.image} alt=""/>
+                        </>))}
+                        {data.result.map((doc) => (<>
+                            <img key={doc.id} src={doc.image} alt=""/>
+                        </>))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>)
 }
 
 export default Partners

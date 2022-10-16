@@ -2,16 +2,20 @@ import React, {useState} from 'react';
 import './Appoinment.sidebar.scss'
 import {useTranslation} from "react-i18next";
 import {ReactComponent as Exit} from "../../../../assets/icons/ExitLight.svg";
+import {usePostOrderMutation} from "../../../../redux";
 
 function AppoinmentSidebar({order, setOrder}) {
-    const [departments, setDepartments] = useState([])
-    const [doctors, setDoctors] = useState([])
+    const [postOrder, {isError}] = usePostOrderMutation()
+    const [departments, setDepartments] = useState(JSON.parse(localStorage.getItem('services')))
+    const [doctors, setDoctors] = useState(JSON.parse(localStorage.getItem('doctors')))
 
     const [openDepartment, setOpenDepartment] = useState(false)
     const [openDoctor, setOpenDoctor] = useState(false)
+    const [departmentName, setDepartmentName] = useState('')
+    const [doctorName, setDoctorName] = useState('')
 
-    const [department, setDepartment] = useState('Select Department')
-    const [doctor, setDoctor] = useState('Select Doctor')
+    const [departmentId, setDepartmentId] = useState('')
+    const [doctorId, setDoctorId] = useState('')
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [number, setNumber] = useState('')
@@ -19,8 +23,18 @@ function AppoinmentSidebar({order, setOrder}) {
 
     const {t} = useTranslation();
 
-    const SendOrder = (e) => {
-        e.preventDefault()
+    const SendOrder = async (e) => {
+        e.preventDefault();
+        if (departmentId && doctorId && name && email && number && date) {
+            await postOrder({
+                our_service_department_id: departmentId,
+                doctor_info_id: doctorId,
+                full_name: name,
+                email: email,
+                phone_number: number,
+                date: date
+            }).unwrap();
+        }
     }
 
     return (<div className='appoinment__container'>
@@ -44,17 +58,18 @@ function AppoinmentSidebar({order, setOrder}) {
                         <input onClick={() => setOpenDepartment(true)}
                                style={{borderRadius: openDepartment === true ? '10px 10px 0 0' : '10px'}}
                                className='worked__inputs-select' type="text"
-                               value={department}/>
+                               value={departmentName}/>
                         <div className='content' style={{display: openDepartment === true ? 'block' : "none"}}>
                             <ul className='content__list'>
-                                <li onClick={e => {
-                                    setDepartment(e.target.value);
-                                    setOpenDepartment(false)
-                                }} value={'Urologiya'}
-                                    className='content__list-item'>Urlogiya
-                                </li>
-                                <li className='content__list-item'>Nevrologiya</li>
-                                <li className='content__list-item'>Ortopediya</li>
+                                {departments.map(department => (
+                                    <li id={department.department_id} onClick={e => {
+                                        setDepartmentName(e.target.innerHTML);
+                                        setDepartmentId(e.target.id);
+                                        setOpenDepartment(false)
+                                    }} value={department.name_ru}
+                                        className='content__list-item'>{department.name_ru}
+                                    </li>
+                                ))}
                             </ul>
                         </div>
                     </div>
@@ -62,22 +77,26 @@ function AppoinmentSidebar({order, setOrder}) {
                         <input onClick={() => setOpenDoctor(true)}
                                style={{borderRadius: openDoctor === true ? '10px 10px 0 0' : '10px'}}
                                className='worked__inputs-select' type="text"
-                               value={doctor}/>
+                               value={doctorName}/>
                         <div className='content' style={{display: openDoctor === true ? 'block' : "none"}}>
                             <ul className='content__list'>
-                                <li onClick={e => {
-                                    setDoctor(e.target.value);
+                                {doctors.map(doctor=>(
+                                <li id={doctor.doctor_id} onClick={e => {
+                                    setDoctorName(e.target.innerHTML);
+                                    setDoctorId(e.target.id);
                                     setOpenDoctor(false)
-                                }} className='content__list-item'>Alisher
+                                }} className='content__list-item'>{doctor.full_name_ru}
                                 </li>
-                                <li className='content__list-item'>Ganisher</li>
-                                <li className='content__list-item'>Ergash</li>
+                                ))}
                             </ul>
                         </div>
                     </div>
-                    <input className='worked__inputs-input' type="text" placeholder={'Enter your Name'} onChange={(e) => setName(e.target.value)}/>
-                    <input className='worked__inputs-input' type="email" placeholder={'Enter your Email'} onChange={(e) => setEmail(e.target.value)}/>
-                    <input className='worked__inputs-input' type="tel" placeholder={'Enter your Number'} onChange={(e) => setNumber(e.target.value)}/>
+                    <input className='worked__inputs-input' type="text" placeholder={'Enter your Name'}
+                           onChange={(e) => setName(e.target.value)}/>
+                    <input className='worked__inputs-input' type="email" placeholder={'Enter your Email'}
+                           onChange={(e) => setEmail(e.target.value)}/>
+                    <input className='worked__inputs-input' type="tel" placeholder={'Enter your Number'}
+                           onChange={(e) => setNumber(e.target.value)}/>
                     <input className='worked__inputs-input' type="date" onChange={(e) => setDate(e.target.value)}/>
                     <input className='worked__inputs-btn' type="submit" value={t('appoinment_submit')} onClick={(e) => {
                         setOrder(false);

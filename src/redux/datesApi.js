@@ -13,7 +13,29 @@ export const datesApi = createApi({
         getSingle: build.query({
             query: (id) => `${id}`
         }),
+        postContact: build.mutation({
+            query: (body) => ({
+                url: 'contuct-us',
+                method: 'POST',
+                body
+            })
+        }),
+        postOrder: build.mutation({
+            query: (body) => ({
+                url: 'appointment',
+                method: 'POST',
+                body,
+            })
+        })
     })
 })
 
-export const {useGetDatesQuery, useGetDateQuery, useGetServiceQuery, useGetDataQuery,useGetSingleQuery} = datesApi;
+export const {
+    useGetDatesQuery,
+    useGetDateQuery,
+    useGetServiceQuery,
+    useGetDataQuery,
+    useGetSingleQuery,
+    usePostContactMutation,
+    usePostOrderMutation
+} = datesApi;
