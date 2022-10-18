@@ -16,6 +16,7 @@ function BlogSingle() {
     const {t} = useTranslation()
     const id = useParams()
     const {data = [], isLoading, isError} = useGetSingleQuery(`/blogs/single/${id.id}`)
+    const lang = localStorage.getItem('i18nextLng')
 
     const ali = [{
         id: 1,
@@ -26,56 +27,46 @@ function BlogSingle() {
         header_image: photo,
     }]
 
-    const post = {
-        id: 1,
-        image: photo1,
-        title: 'Agency provides a full service range including technical skills, design, business understanding.',
-        descr: 'Outsource your digital marketing efforts, instead of handling in-house. They can provide your business with a variety of digital solutions to promote your product or service online and help you.',
-        info:
-            {
-                id: 1,
-                title: 'Promote your product',
-                descr: 'Ability to put themselves in the merchant\'s shoes. It is meant to partner on the long run, and work as an extension of the merchant\'s team.',
-                infos: [
-                    {id: 1, title: 'Digital marketing'},
-                    {id: 2, title: 'Efforts instead'},
-                    {id: 3, title: 'Handling in-house'},
-                ],
-                seconddescr: 'A digital agency is a business you hire to outsource your digital marketing efforts, instead of handling in-house. They can provide your business with a variety of digital solutions to promote your product or service online and help you.',
-            }
-    }
 
     if (isLoading) return <Loader/>
     if (isError) return <Loader/>
 
+    const addition_ru = data.data[0].addition_select_ru;
+    const addition_uz = data.data[0].addition_select_uz;
+
+    const [first_ru, second_ru, third_ru] = addition_ru.split('+');
+    const [first_uz, second_uz, third_uz] = addition_uz.split('+');
+
     return (<section className='blog__single'>
         {ali.map(type => (<SectionHeaders data={type}/>))}
         <Container>
-            <div className='post'>
-                {data.data[0].link_video !== null ?
-                    <div className='post__video'>
-                        <ReactPlayer stopOnUnmount={false} pip={true} width={'100%'} height={'100%'} light={true}
-                                     controls={true} playing url={data.data[0].link_video}/>
+            {data.data.map(post => (
+                <div className='post'>
+                    {post.link_video !== null ?
+                        <div className='post__video'>
+                            <ReactPlayer stopOnUnmount={false} pip={true} width={'100%'} height={'100%'} light={true}
+                                         controls={true} playing url={post.link_video}/>
+                        </div>
+                        : <img src={post.image} alt="" className='post__image'/>
+                    }
+                    <p className='post__title'>{post.title_1_uz}</p>
+                    <p className='post__descr'>{post.description_1_uz}</p>
+                    <div className='post__info'>
+                        <p className='post__info-title'>{post.title_2_ru}</p>
+                        <p className='post__info-descr'>{post.description_2_ru}</p>
+                        <ul className='post__info-list'>
+                            <li className='list'>{lang === 'uz' ? first_uz : first_ru}</li>
+                            <li className='list'>{lang === 'uz' ? second_uz : second_ru}</li>
+                            <li className='list'>{lang === 'uz' ? third_uz : third_ru}</li>
+                        </ul>
+                        <p className='post__info-seconddescr'>{post.description_3_ru}</p>
                     </div>
-                    : <img src={data.data[0].image} alt="" className='post__image'/>
-                }
-                <p className='post__title'>{post.title}</p>
-                <p className='post__descr'>{post.descr}</p>
-                <div className='post__info'>
-                    <p className='post__info-title'>{post.info.title}</p>
-                    <p className='post__info-descr'>{post.info.descr}</p>
-                    <ul className='post__info-list'>
-                        {post.info.infos.map(info => (
-                            <li className='list'>{info.title}</li>
-                        ))}
-                    </ul>
-                    <p className='post__info-seconddescr'>{post.info.seconddescr}</p>
+                    <div className='post__post'>
+                        <Tilda/>
+                        <p className='post__post-text'>{post.description_4_ru}</p>
+                    </div>
                 </div>
-                <div className='post__post'>
-                    <Tilda/>
-                    <p className='post__post-text'>{post.descr}</p>
-                </div>
-            </div>
+            ))}
         </Container>
     </section>)
 }
