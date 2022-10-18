@@ -15,6 +15,7 @@
   font-size: calc(16px + 4 * (100vw / 1280));
   text-align: center;
   text-transform: capitalize;
+  margin-bottom: 100px;
   @media (max-width: 970px) {
     font-size: calc(16px + (4 + 4 * .7) *  ((100vw - 375px) / 1240));
     row-gap: 15px;

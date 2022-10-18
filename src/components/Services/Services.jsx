@@ -21,7 +21,6 @@ const info = {
 function Services() {
     const {data, isLoading, isError} = useGetDataQuery('our-service')
 
-
     if (isError) return <Loader/>
     if (isLoading) return <Loader/>
 
@@ -49,7 +48,7 @@ function Services() {
                         <p data-aos="zoom-in" data-aos-duration="4000">Allergist</p>
                     </div>
                 </div>
-                <Faq/>
+                <Faq data={service.our_service_faqs}/>
             </Container>
         </>))}
     </section>)

@@ -1,6 +1,5 @@
 import React from 'react'
 import photo from "../../assets/images/blogHeader.png";
-import photo1 from "../../assets/images/aqImg3.png";
 import SectionHeaders from "../UsableComponents/SectionHeaders/SectionHeader";
 import Container from "../UsableComponents/Container/Container";
 import {ReactComponent as Tilda} from '../../assets/icons/String.svg';

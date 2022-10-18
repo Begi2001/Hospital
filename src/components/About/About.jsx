@@ -43,7 +43,7 @@ function About() {
                 <Service/>
                 <Programs/>
                 <Question data={about}/>
-                <Faq/>
+                <Faq data={about.aboutus_faqs} />
             </div>
         </div>))}
     </section>)
