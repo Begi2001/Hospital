@@ -37,7 +37,7 @@ function Operation() {
                     <div data-aos="zoom-in" data-aos-duration="4000" className='operation__video'>
                         <ReactPlayer stopOnUnmount={false} pip={true} width={'100%'} height={'100%'} light={true}
                                      controls={true} playing
-                                     url='https://www.youtube.com/watch?v=k2qgadSvNyU&list=RDk2qgadSvNyU&start_radio=1'/>
+                                     url={operation.link_video}/>
                     </div>
 
                     <p data-aos="zoom-in" data-aos-duration="4000"
@@ -46,26 +46,12 @@ function Operation() {
                        className='operation__text'>{lang === 'uz' ? operation.full_description_uz : operation.full_description_ru}</p>
                     <div className='partical'>
                         <p className='partical__title'>{t('operationdoctors')}</p>
-                        <div className="slider">
-                            <div className="slide-track">
-                                <div className="doctors__container">
-                                    <div className="doctors__wrapper">
-                                        {operation.attended_doctors.map(info => (<DoctorCard data={info}/>))}
-                                    </div>
-                                    <div className="doctors__wrapper">
-                                        {operation.attended_doctors.map(info => (<DoctorCard data={info}/>))}
-                                    </div>
-                                    <div className="doctors__wrapper">
-                                        {operation.attended_doctors.map(info => (<DoctorCard data={info}/>))}
-                                    </div>
-                                    <div className="doctors__wrapper">
-                                        {operation.attended_doctors.map(info => (<DoctorCard data={info}/>))}
-                                    </div>
-                                </div>
+                        <div className="doctors__container">
+                            <div className="doctors__wrapper">
+                                {operation.attended_doctors.map(info => (<DoctorCard data={info}/>))}
                             </div>
                         </div>
                     </div>
-
                 </div>
             </Container>
         </>))}

@@ -1,6 +1,7 @@
 @import "../../../assets/variables/colors";
 
 .MainMedDiv {
+  text-transform: capitalize;
   width: 100%;
   margin: 0 auto;
   padding: 50px 15px;
@@ -34,7 +35,7 @@
 
     .Box2 {
       margin-bottom: 3rem;
-      width: 147px;
+      width: 170px;
       height: 165px;
       display: flex;
       flex-direction: column;

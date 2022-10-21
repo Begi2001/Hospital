@@ -12,9 +12,9 @@ function BlogCard({data}) {
             <img data-aos="zoom-in" data-aos-duration="4000" src={data.image} alt="" className='image'/>
             <div className='body'>
                 <p data-aos="zoom-in" data-aos-duration="4000"
-                   className='title'>{lang === 'uz' ? data.title_uz : data.title_ru}</p>
+                   className='title'>{lang === 'uz' ? data.title_1_uz : data.title_1_ru}</p>
                 <p data-aos="zoom-in" data-aos-duration="4000"
-                   className='descr'>{lang === 'uz' ? data.description_uz : data.description_ru}</p>
+                   className='descr'>{lang === 'uz' ? data.description_1_uz : data.description_1_ru}</p>
                 <ReadMore children={t('urltext')} url={`/blog/${data.blog_id}`}/>
             </div>
         </div>

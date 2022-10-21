@@ -10,21 +10,17 @@ import Container from "../../UsableComponents/Container/Container";
 import Title from "../../UsableComponents/Title/Title";
 import Loader from "../../UsableComponents/Loader/Loader";
 
-function Service() {
+function Service({limit}) {
     const lang = localStorage.getItem('i18nextLng')
     const {t} = useTranslation();
-
     const {data = [], isLoading} = useGetDataQuery('our-service')
-
     if (isLoading) return <Loader/>
-
-    localStorage.setItem('services', JSON.stringify(data.result[0].our_service_departments))
     return (<section className='service'>
         <Container>
             {data.result.map(serv => (<div className='wrapper'>
-                <Title children={t('service')} url={'/services'}/>
+                {limit > 3 ? <Title children={t('service')} url={'/services'}/> : <h1 className='another'>{t('servicesanother')}</h1>}
                 <div className='services'>
-                    {serv.our_service_departments.slice(0, 6).map(ser => (
+                    {serv.our_service_departments.slice(0, limit).map(ser => (
                         <div key={ser.department_id} className='item'>
                             <img data-aos="zoom-out" data-aos-duration="1000" src={ser.icon} alt=""/>
                             <p data-aos="zoom-out" data-aos-duration="1000"

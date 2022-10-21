@@ -110,12 +110,11 @@ $animationSpeed: 20s;
       }
     }
 
-    .partical{
-      position: relative;
+    .partical {
       width: 100%;
       margin-bottom: 100px;
-      overflow: hidden;
-      &__title{
+
+      &__title {
         font-weight: 600;
         font-size: 32px;
         line-height: 30px;
@@ -128,54 +127,18 @@ $animationSpeed: 20s;
         }
       }
 
-      .slider {
-        display: flex;
-        width: 100%;
-
-        &::before,
-        &::after {
-          @include white-gradient;
-          content: "";
-          height: 125px;
-          position: absolute;
-          width: 200px;
-          z-index: 2;
-        }
-
-        &::after {
-          right: 0;
-          top: 0;
-          transform: rotateZ(180deg);
-        }
-
-        &::before {
-          left: 0;
-          top: 0;
-        }
-
-        .slide-track {
-          animation: scroll $animationSpeed linear infinite;
-          display: flex;
-          width: calc(250px * 14);
-          justify-content: space-between !important;
-        }
-      }
-
       .doctors__container {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         gap: 15px;
 
         .doctors__wrapper {
           display: flex;
-          justify-content: center;
+          justify-content: flex-start;
           align-items: center;
-          gap: 35px;
-          overflow-x: auto;
-          margin-bottom: -20px;
-          padding-bottom: 30px;
-          padding-left: 15px;
+          gap: 45px 7%;
+          flex-wrap: wrap;
         }
       }
     }

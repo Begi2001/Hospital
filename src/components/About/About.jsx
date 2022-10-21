@@ -20,7 +20,7 @@ function About() {
     const {data = [], isLoading, isError} = useGetDataQuery('about-us')
     const founder = {
         id: 1,
-        image: photo3,
+        card_image: photo3,
         full_name_uz: `${t('abouttitle')}`,
         full_name_ru: `${t('abouttitle')}`,
         subtitle_uz: `${t('aboutsubtitle')}`,

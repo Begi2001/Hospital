@@ -13,6 +13,7 @@ function Blog() {
     if (isLoading) return <Loader/>
     if (isError) return <Loader/>
 
+
     return (<div className='blog'>
         {data.result.map(item => (
             <>

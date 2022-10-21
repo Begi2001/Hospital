@@ -1,13 +1,14 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './Appoinment.sidebar.scss'
 import {useTranslation} from "react-i18next";
 import {ReactComponent as Exit} from "../../../../assets/icons/ExitLight.svg";
 import {usePostOrderMutation} from "../../../../redux";
+import axios from "axios";
 
 function AppoinmentSidebar({order, setOrder}) {
     const [postOrder, {isError}] = usePostOrderMutation()
-    const [departments, setDepartments] = useState(JSON.parse(localStorage.getItem('services')))
-    const [doctors, setDoctors] = useState(JSON.parse(localStorage.getItem('doctors')))
+    const [departments, setDepartments] = useState([])
+    const [doctors, setDoctors] = useState([])
 
     const [openDepartment, setOpenDepartment] = useState(false)
     const [openDoctor, setOpenDoctor] = useState(false)
@@ -22,6 +23,17 @@ function AppoinmentSidebar({order, setOrder}) {
     const [date, setDate] = useState('')
 
     const {t} = useTranslation();
+
+    useEffect(() => {
+        axios.get('https://mamuriyat.medartgroup.uz/api/doctors')
+            .then((res) => {
+                setDoctors(res.data.result[0].doctor_infos)
+            })
+        axios.get('https://mamuriyat.medartgroup.uz/api/our-service')
+            .then((res) => {
+                setDepartments(res.data.result[0].our_service_departments)
+            })
+    }, [])
 
     const SendOrder = async (e) => {
         e.preventDefault();
@@ -80,13 +92,13 @@ function AppoinmentSidebar({order, setOrder}) {
                                value={doctorName}/>
                         <div className='content' style={{display: openDoctor === true ? 'block' : "none"}}>
                             <ul className='content__list'>
-                                {doctors.map(doctor=>(
-                                <li id={doctor.doctor_id} onClick={e => {
-                                    setDoctorName(e.target.innerHTML);
-                                    setDoctorId(e.target.id);
-                                    setOpenDoctor(false)
-                                }} className='content__list-item'>{doctor.full_name_ru}
-                                </li>
+                                {doctors.map(doctor => (
+                                    <li id={doctor.doctor_id} onClick={e => {
+                                        setDoctorName(e.target.innerHTML);
+                                        setDoctorId(e.target.id);
+                                        setOpenDoctor(false)
+                                    }} className='content__list-item'>{doctor.full_name_ru}
+                                    </li>
                                 ))}
                             </ul>
                         </div>

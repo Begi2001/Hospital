@@ -9,7 +9,7 @@ import {useGetSingleQuery} from "../../redux";
 import {useParams} from "react-router-dom";
 import {useTranslation} from "react-i18next";
 import Loader from "../UsableComponents/Loader/Loader";
-
+import Services from '../Home/Service/Service.jsx'
 
 function Service() {
     const id = useParams()
@@ -28,7 +28,7 @@ function Service() {
             title: `${t('serviceopeningtitle')}`,
             days: [{id: 1, days: `${t('serviceopeningdays1')}`, time: '08:00 - 21:00'}, {
                 id: 2,
-                days: `${t('serviceopeningdays1')}`,
+                days: `${t('serviceopeningdays2')}`,
                 time: '08:00 - 19:00'
             }],
             descr: `${t('serviceopeningdescr')}`,
@@ -62,7 +62,7 @@ function Service() {
                     <h1 className='service__title'>{lang === 'uz' ? data.data[0].name_uz : data.data[0].name_ru}</h1>
                     <p className='service__descr'>{lang === 'uz' ? data.data[0].description_uz : data.data[0].description_ru}</p>
                     <hr className='divider'/>
-                    <p className='service__descr'>{lang === 'uz' ? data.data[0].full_description_uz : data.data[0].full_description_uz}</p>
+                    <p className='service__descr'>{lang === 'uz' ? data.data[0].full_description_uz : data.data[0].full_description_ru}</p>
                 </div>
                 <div className='opening'>
                     <p className='opening__title'><span><Clock/></span>{service.opening[0].title}</p>
@@ -81,7 +81,7 @@ function Service() {
                     <h1 className='service__title'>{lang === 'uz' ? data.data[0].name_uz : data.data[0].name_ru}</h1>
                     <p className='service__descr'>{lang === 'uz' ? data.data[0].description_uz : data.data[0].description_ru}</p>
                     <hr className='divider'/>
-                    <p className='service__descr'>{lang === 'uz' ? data.data[0].full_description_uz : data.data[0].full_description_uz}</p>
+                    <p className='service__descr'>{lang === 'uz' ? data.data[0].full_description_uz : data.data[0].full_description_ru}</p>
                 </div>
                 <div className='opening'>
                     <p className='opening__title'><span><User/></span>{service.emergency[0].title}</p>
@@ -89,6 +89,8 @@ function Service() {
                     <a href={service.emergency[0].url}><p className='emer__text'>{service.emergency[0].text}</p></a>
                 </div>
             </div>
+
+            <Services limit={3}/>
         </Container>
     </section>)
 }

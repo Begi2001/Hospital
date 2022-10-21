@@ -10,6 +10,7 @@ import Container from "../UsableComponents/Container/Container";
 import ServiceCard from "../UsableComponents/Cards/ServiceCard/ServiceCard";
 import Faq from "../UsableComponents/FAQs/Faq";
 import Loader from "../UsableComponents/Loader/Loader";
+import {useTranslation} from "react-i18next";
 
 const info = {
     id: 1,
@@ -19,6 +20,7 @@ const info = {
 }
 
 function Services() {
+    const {t}=useTranslation()
     const {data, isLoading, isError} = useGetDataQuery('our-service')
 
     if (isError) return <Loader/>
@@ -38,14 +40,9 @@ function Services() {
                         <div data-aos="zoom-in" data-aos-duration="4000">
                             <Tilda/>
                         </div>
-                        <p data-aos="zoom-in" data-aos-duration="4000" className='text'>Historically, drugs were
-                            discovered through
-                            identifying the active ingredient from
-                            traditional remedies or by serendipitous
-                            discovery. Later chemical libraries of
-                            synthetic small molecules.</p>
+                        <p data-aos="zoom-in" data-aos-duration="4000" className='text'>{t('servicehist')}</p>
                         <p data-aos="zoom-in" data-aos-duration="4000" className='author'>Mildred Payne</p>
-                        <p data-aos="zoom-in" data-aos-duration="4000">Allergist</p>
+                        <p data-aos="zoom-in" data-aos-duration="4000">{t('servicehisttype')}</p>
                     </div>
                 </div>
                 <Faq data={service.our_service_faqs}/>

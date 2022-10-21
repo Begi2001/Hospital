@@ -12,10 +12,10 @@ function SmallBlog({data}) {
             </div>
             <div className='smallblog__body'>
                 <p className='smallblog__body-where'>{lang === 'uz' ? data.theme_uz : data.theme_ru}</p>
-                <p className='smallblog__body-title'>{lang === 'uz' ? data.title_uz : data.title_ru}</p>
+                <p className='smallblog__body-title'>{lang === 'uz' ? data.title_1_uz : data.title_1_ru}</p>
             </div>
             <div className='smallblog__footer'>
-                <p className='smallblog__footer-time'>23 Nov, 2021</p>
+                <p className='smallblog__footer-time'>{data.created_at}</p>
             </div>
         </NavLink>
     )

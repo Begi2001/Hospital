@@ -10,6 +10,14 @@
   .wrapper {
     width: 100%;
 
+    .another{
+      text-align: center;
+      font-weight: 600;
+      font-size: calc(24px + 10 * (50vw / 1280));
+      line-height: 25px;
+      color: $lightblue;
+      margin-bottom: 50px;
+    }
     .services {
       width: 100%;
       display: flex;

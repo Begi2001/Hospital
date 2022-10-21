@@ -36,7 +36,7 @@ function Programs() {
                         <p data-aos="zoom-in" data-aos-duration="4000" className='program__descr'>{prog.title}</p>
                     </div>))}
                 </div>
-                <p data-aos="zoom-in" data-aos-duration="4000" className='last__descr'></p>
+                <p data-aos="zoom-in" data-aos-duration="4000" className='last__descr'>{t('aboutprogramlastdescr')}</p>
             </div>
         </Container>
     </div>)

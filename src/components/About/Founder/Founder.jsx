@@ -8,7 +8,7 @@ function Founder({data}) {
 
     return (<Container>
         <div key={data.doctor_id} className='absolute'>
-            <img data-aos="zoom-in" data-aos-duration="4000" src={data.image} alt="" className='absolute__image'/>
+            <img data-aos="zoom-in" data-aos-duration="4000" src={data.card_image} alt="" className='absolute__image'/>
             <div className='absolute__infos'>
                 <p data-aos="zoom-in" data-aos-duration="4000"
                    className='absolute__infos-title'>{lang === 'uz' ? data.full_name_uz : data.full_name_ru}</p>

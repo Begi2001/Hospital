@@ -91,6 +91,7 @@
   "beds": "Honalar soni",
   "awards": "Mukofotlar",
   "topnews": "Ommabop Yangiliklar",
+  "servicesanother": "Bizning boshqa xizmatlarimiz",
   "serviceservicetitle": "Xizmatimiz qanday",
   "serviceservicedescr": "Professor Joshua Klark Xavardda o'qigan va 1987 yilda Garvard tibbiyot maktabida tibbiyot bo'yicha malakali bo'lgan. Keyin u keyingi besh yil davomida Nyu-Yorkning turli kasalxonalarida, jumladan Sietl va Vashingtonda ishlagan. U, shuningdek, Tibbiy tadqiqotlar kengashi, NY Heart Foundation va Wellcome Trust bilan lavozimlarda ishlagan.",
   "serviceservicelastdescr": "U Nyu-York shimolida torakal va umumiy jarroh bo'lib ishlagan va qizilo'ngach jarrohligining asosiy klinik yo'nalishi bo'lgan Nyu-York Tibbiyot fanlari akademiyasining Tibbiy tadqiqot institutiga katta ilmiy xodim etib tayinlangan. U bu joyda 1992 yil oldin Sietlga ko'chib kelguniga qadar davom etdi.",
@@ -108,10 +109,7 @@
   "email": "Elektron pochta",
   "addres": "manzil",
   "importantPage": "muhim sahifalalar",
-  "contacts": "aloqalar"
-
-
-
-
-
+  "contacts": "aloqalar",
+  "servicehist": "Tarixiy jihatdan, dorilar an'anaviy dori vositalaridan faol moddalarni aniqlash yoki tasodifiy kashfiyot orqali kashf etilgan. Keyinchalik sintetik kichik molekulalarning kimyoviy kutubxonalari.",
+  "servicehisttype": "Allergolog"
 }

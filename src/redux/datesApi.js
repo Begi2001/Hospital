@@ -2,7 +2,7 @@ import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 
 export const datesApi = createApi({
     reducerPath: 'datesApi',
-    baseQuery: fetchBaseQuery({baseUrl: 'https://medart.softstars.uz/api/'}),
+    baseQuery: fetchBaseQuery({baseUrl: 'https://mamuriyat.medartgroup.uz/api/'}),
     endpoints: (build) => ({
         getDates: build.query({
             query: (limit = '') => `/operations?${limit && `_limit=${limit}`}`

@@ -10,7 +10,7 @@ import Carousel1 from "./Carousel/Carousel";
 function Home() {
     return (<>
         <Carousel1/>
-        <Service/>
+        <Service limit={6}/>
         <About/>
         <Doctors/>
         <News/>

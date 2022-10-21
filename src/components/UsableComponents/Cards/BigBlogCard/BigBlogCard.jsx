@@ -1,6 +1,5 @@
 import React from 'react'
 import './BigBlogCard.scss'
-import İmg from '../../../../assets/images/aqImg2.png'
 import {NavLink} from "react-router-dom";
 
 function BigBlog({data}) {
@@ -12,10 +11,10 @@ function BigBlog({data}) {
         </div>
         <div className='bigblog__body'>
             <p className='bigblog__body-where'>{lang === 'uz' ? data.theme_uz : data.theme_ru}</p>
-            <p className='bigblog__body-title'>{lang === 'uz' ? data.title_uz : data.title_ru}</p>
+            <p className='bigblog__body-title'>{lang === 'uz' ? data.title_1_uz : data.title_1_ru}</p>
         </div>
         <div className='bigblog__footer'>
-            <p className='bigblog__footer-time'>23 Nov, 2021</p>
+            <p className='bigblog__footer-time'>{data.created_at}</p>
         </div>
     </NavLink>)
 }
